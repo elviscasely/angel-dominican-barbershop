@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Angel Dominican Barbershop · Kennesaw, GA</title>
 <meta name="description" content="Dominican barbershop in Kennesaw, GA. Fades, tapers, beard work and kids' cuts. Walk-ins welcome. 2790 Cobb Pkwy NW.">
+<link rel="icon" href="media/favicon.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=DM+Serif+Display:ital@1&display=swap" rel="stylesheet">
@@ -320,6 +321,27 @@ footer a:hover{color:#fff}
   .menu-col{padding:22px}
   .brand-txt b{font-size:18px}
 }
+
+.logo-badge{flex:none;width:48px;height:48px;border-radius:12px;background:#fff;display:grid;place-items:center;overflow:hidden;box-shadow:0 0 0 2px rgba(255,255,255,.15)}
+.logo-badge img{width:100%;height:100%;object-fit:contain}
+.hero .bgv{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:blur(28px) brightness(.55) saturate(1.2);transform:scale(1.15)}
+.hero .phone{position:absolute;right:max(20px,calc((100vw - 1200px)/2 + 20px));bottom:56px;z-index:2;width:300px;aspect-ratio:9/16;border-radius:30px;overflow:hidden;border:6px solid #fff;box-shadow:0 30px 80px rgba(0,0,0,.6),0 0 0 2px var(--red)}
+.hero .phone video{position:static;width:100%;height:100%;object-fit:cover}
+.hero .phone .tag{position:absolute;left:10px;bottom:10px;font-size:11px;font-weight:700;letter-spacing:.08em;background:rgba(0,12,31,.75);padding:6px 9px;border-radius:999px;display:flex;gap:6px;align-items:center}
+.hero .phone .tag svg{width:13px;height:13px}
+.hero .wrap{padding-right:360px}
+.reel{display:flex;gap:14px;margin-top:44px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px;height:auto;grid-template-columns:none}
+.reel figure{flex:none;width:250px;aspect-ratio:9/16;scroll-snap-align:start}
+.reel figure:first-child:not(.wide){aspect-ratio:9/16;grid-column:auto}
+.reel figure.wide{width:440px;aspect-ratio:16/9;align-self:center}
+.reel::-webkit-scrollbar{height:6px}.reel::-webkit-scrollbar-thumb{background:rgba(255,255,255,.25);border-radius:6px}
+.avatar .face img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ig-cta{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:26px;padding:20px 24px;border-radius:16px;background:linear-gradient(110deg,var(--blue),#06306a 60%,var(--red) 160%)}
+.ig-cta b{font-size:17px}
+.award{display:inline-flex;align-items:center;gap:10px;margin-top:22px;padding:10px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.05);font-weight:700;font-size:14px}
+.award i{font-style:normal;color:#f5c542}
+@media (max-width:1060px){.hero .phone{display:none}.hero .wrap{padding-right:20px}.hero .bgv{filter:brightness(.6);transform:none}}
+@media (max-width:560px){.logo-badge{width:42px;height:42px}.reel figure{width:200px}.reel figure.wide{width:300px}}
 </style>
 </head>
 <body>
@@ -334,11 +356,7 @@ footer a:hover{color:#fff}
 <header id="hdr">
   <div class="wrap nav">
     <a href="#home" class="brand" aria-label="Angel Dominican Barbershop home">
-      <svg width="44" height="44" viewBox="0 0 44 44" aria-hidden="true">
-        <rect x="0" y="0" width="20" height="20" rx="3" fill="#002D62"/><rect x="24" y="0" width="20" height="20" rx="3" fill="#CE1126"/>
-        <rect x="0" y="24" width="20" height="20" rx="3" fill="#CE1126"/><rect x="24" y="24" width="20" height="20" rx="3" fill="#002D62"/>
-        <circle cx="22" cy="22" r="9" fill="#fff"/><text x="22" y="26.5" text-anchor="middle" font-family="Anton,Impact,sans-serif" font-size="13" fill="#002D62">A</text>
-      </svg>
+      <span class="logo-badge"><img src="media/logo.jpg" alt="Angel Dominican Barber Shop logo"></span>
       <span class="brand-txt"><b>ANGEL DOMINICAN</b><small>Barbershop · Kennesaw</small></span>
     </a>
     <nav class="links" aria-label="Main">
@@ -364,10 +382,9 @@ footer a:hover{color:#fff}
 <!-- ================= HOME ================= -->
 <div class="page" id="p-home">
   <section class="hero">
-    <img class="poster" src="https://images.pexels.com/videos/7697073/adult-barber-barber-shop-barbering-7697073.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="">
-    <video autoplay muted loop playsinline preload="metadata" poster="https://images.pexels.com/videos/7697073/adult-barber-barber-shop-barbering-7697073.jpeg?auto=compress&cs=tinysrgb&w=1600">
-      <source src="https://videos.pexels.com/video-files/7697073/7697073-hd_1920_1080_30fps.mp4" type="video/mp4">
-    </video>
+    <img class="poster" src="media/video/DDdI8QxRS8X.jpg" alt="" style="filter:brightness(.55)">
+    <video class="bgv" autoplay muted loop playsinline preload="metadata" poster="media/video/DDdI8QxRS8X.jpg"><source src="media/video/DDdI8QxRS8X.mp4" type="video/mp4"></video>
+    <div class="phone" aria-hidden="true"><video autoplay muted loop playsinline preload="metadata" poster="media/video/DDdI8QxRS8X.jpg"><source src="media/video/DDdI8QxRS8X.mp4" type="video/mp4"></video><span class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg>@angeldominicanbarbershop</span></div>
     <div class="wrap">
       <div class="open-pill" id="openPill"><i></i><span id="openTxt">Open today</span></div>
       <h1><span data-i="h1a">Fresh cuts.</span><br><span class="r" data-i="h1b">Dominican hands.</span></h1>
@@ -386,7 +403,7 @@ footer a:hover{color:#fff}
     <div class="stat"><b>4.4★</b><span data-i="st1">Google rating</span></div>
     <div class="stat"><b>165+</b><span data-i="st2">Google reviews</span></div>
     <div class="stat"><b>10</b><span data-i="st3">Barbers on deck</span></div>
-    <div class="stat"><b>7</b><span data-i="st4">Days a week</span></div>
+    <div class="stat"><b>Top 3</b><span data-i="st4">Kennesaw · BusinessRate 2026</span></div>
   </div></section>
 
   <section><div class="wrap">
@@ -394,11 +411,11 @@ footer a:hover{color:#fff}
     <h2><span data-i="exH">More than a cut.</span> <em class="s" data-i="exS">Es familia.</em></h2>
     <p class="lede" data-i="exP">A Dominican barbershop is the neighborhood living room — music on, conversation going, and a barber who takes his time getting it right.</p>
     <div class="grid3">
-      <article class="card"><div class="img"><img loading="lazy" src="https://images.pexels.com/photos/35157699/pexels-photo-35157699.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Close-up of a precision fade haircut"></div>
+      <article class="card"><div class="img"><img loading="lazy" src="media/ig/CQIYzR-jHD1.jpg" alt="Fresh mid fade cut at Angel Dominican Barbershop"></div>
         <div class="bd"><span class="num">01</span><h3 data-i="c1h">Precision fades</h3><p data-i="c1p">Skin, low, mid, high, burst — tapered clean and blended tight. Show us a photo and we'll match it.</p></div></article>
-      <article class="card"><div class="img"><img loading="lazy" src="https://images.pexels.com/photos/7697354/pexels-photo-7697354.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Barber cutting a young boy's hair"></div>
+      <article class="card"><div class="img"><img loading="lazy" src="media/ig/CZfTfMfvr_Q.jpg" alt="Kid's fade with a design, done at the shop"></div>
         <div class="bd"><span class="num">02</span><h3 data-i="c2h">Kids treated like royalty</h3><p data-i="c2p">Patient barbers, first-cut friendly, and a family vibe that makes Saturday haircuts easy for parents.</p></div></article>
-      <article class="card"><div class="img"><img loading="lazy" src="https://images.pexels.com/photos/2014809/pexels-photo-2014809.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Barber shaving a client's beard"></div>
+      <article class="card"><div class="img"><img loading="lazy" src="media/ig/CR2GNOkD4Hu.jpg" alt="Full beard shaped and lined up"></div>
         <div class="bd"><span class="num">03</span><h3 data-i="c3h">Beards &amp; line-ups</h3><p data-i="c3p">Razor-sharp edges, beard shaping and hot-towel finishes for the full Dominican-shop treatment.</p></div></article>
     </div>
   </div></section>
@@ -412,10 +429,14 @@ footer a:hover{color:#fff}
     <span class="eyebrow" data-i="rlE">In the chair</span>
     <h2 data-i="rlH">Watch the work.</h2>
     <div class="reel">
-      <figure><video autoplay muted loop playsinline preload="none" poster="https://images.pexels.com/videos/7686519/pexels-photo-7686519.jpeg?auto=compress&cs=tinysrgb&w=1000"><source src="https://videos.pexels.com/video-files/7686519/7686519-hd_1920_1080_24fps.mp4" type="video/mp4"></video><figcaption data-i="rl1">Scissor work</figcaption></figure>
-      <figure><video autoplay muted loop playsinline preload="none" poster="https://images.pexels.com/videos/5450149/pexels-photo-5450149.jpeg?auto=compress&cs=tinysrgb&w=900"><source src="https://videos.pexels.com/video-files/5450149/5450149-uhd_2560_1440_30fps.mp4" type="video/mp4"></video><figcaption data-i="rl2">Beard detail</figcaption></figure>
-      <figure><video autoplay muted loop playsinline preload="none" poster="https://images.pexels.com/videos/7697121/adult-barber-barber-shop-barbering-7697121.jpeg?auto=compress&cs=tinysrgb&w=600"><source src="https://videos.pexels.com/video-files/7697121/7697121-hd_1080_1920_30fps.mp4" type="video/mp4"></video><figcaption data-i="rl3">Clean up</figcaption></figure>
+      <figure class=""><video autoplay muted loop playsinline preload="none" poster="media/video/CWtFrT9lF22.jpg"><source src="media/video/CWtFrT9lF22.mp4" type="video/mp4"></video><figcaption>Cut by Ángel</figcaption></figure>
+      <figure class=""><video autoplay muted loop playsinline preload="none" poster="media/video/CZ04wbjlzmW.jpg"><source src="media/video/CZ04wbjlzmW.mp4" type="video/mp4"></video><figcaption>Cut by Lesther</figcaption></figure>
+      <figure class="wide"><video autoplay muted loop playsinline preload="none" poster="media/video/CanHvH5lcj9.jpg"><source src="media/video/CanHvH5lcj9.mp4" type="video/mp4"></video><figcaption>Cut by Kelvin</figcaption></figure>
+      <figure class=""><video autoplay muted loop playsinline preload="none" poster="media/video/CZhqry9IvH5.jpg"><source src="media/video/CZhqry9IvH5.mp4" type="video/mp4"></video><figcaption>Cut by Alejandro</figcaption></figure>
+      <figure class=""><video autoplay muted loop playsinline preload="none" poster="media/video/CU0eTa9FwDT.jpg"><source src="media/video/CU0eTa9FwDT.mp4" type="video/mp4"></video><figcaption>Así lo hacemos</figcaption></figure>
+      <figure class=""><video autoplay muted loop playsinline preload="none" poster="media/video/COJwY72DztF.jpg"><source src="media/video/COJwY72DztF.mp4" type="video/mp4"></video><figcaption>Cut by Armando</figcaption></figure>
     </div>
+    <a class="btn btn-ghost btn-sm" style="margin-top:18px" href="https://www.instagram.com/angeldominicanbarbershop/" target="_blank" rel="noopener" data-i="moreIg">More on Instagram →</a>
   </div></section>
 
   <section style="padding-top:0"><div class="wrap">
@@ -435,7 +456,7 @@ footer a:hover{color:#fff}
 
 <!-- ================= SERVICES ================= -->
 <div class="page" id="p-services">
-  <div class="phero" style="--bg:url('https://images.pexels.com/photos/33461079/pexels-photo-33461079.jpeg?auto=compress&cs=tinysrgb&w=1600')"><div class="wrap">
+  <div class="phero" style="--bg:url('media/ig/CSSyWj7j1_K.jpg')"><div class="wrap">
     <span class="eyebrow" data-i="svE">Services &amp; prices</span>
     <h1 data-i="svH">The menu.</h1>
     <p class="lede" data-i="svP">Clear prices, posted up front. Every cut includes a hot-towel neck clean-up and styling finish.</p>
@@ -471,7 +492,7 @@ footer a:hover{color:#fff}
 
 <!-- ================= BARBERS ================= -->
 <div class="page" id="p-barbers">
-  <div class="phero" style="--bg:url('https://images.pexels.com/photos/7697230/pexels-photo-7697230.jpeg?auto=compress&cs=tinysrgb&w=1600')"><div class="wrap">
+  <div class="phero" style="--bg:url('media/ig/CZk91jfFmz0.jpg')"><div class="wrap">
     <span class="eyebrow" data-i="brE">Los barberos</span>
     <h1 data-i="brH">Meet the team.</h1>
     <p class="lede" data-i="brP">Ten chairs, ten styles. Tap a barber to see their links, follow their work, or book straight into their chair.</p>
@@ -485,18 +506,19 @@ footer a:hover{color:#fff}
   </div></div>
   <section><div class="wrap">
     <div class="team" id="teamFull" style="margin-top:0"></div>
-    <p class="note" data-i="brNote">Profiles, handles and links are placeholders for this concept. Barbers marked "In reviews" are named by customers in Google reviews; photos and real handles get swapped in at launch.</p>
+    <p class="note" data-i="brNote">Barber names come from the shop's Instagram and Google reviews ("In reviews" = named by customers). Headshots, handles and links are samples for this concept — real photos and accounts get swapped in at launch.</p>
   </div></section>
 </div>
 
 <!-- ================= GALLERY ================= -->
 <div class="page" id="p-gallery">
-  <div class="phero" style="--bg:url('https://images.pexels.com/photos/785537/pexels-photo-785537.jpeg?auto=compress&cs=tinysrgb&w=1600')"><div class="wrap">
+  <div class="phero" style="--bg:url('media/ig/CXH1Iw6M3LL.jpg')"><div class="wrap">
     <span class="eyebrow" data-i="glE">Gallery</span>
     <h1 data-i="glH">Fresh off the chair.</h1>
     <div class="chips" id="glFilter">
       <button aria-pressed="true" data-f="all" data-i="fAll">All</button>
       <button aria-pressed="false" data-f="cuts" data-i="gCuts">Cuts</button>
+      <button aria-pressed="false" data-f="design" data-i="fDesign">Designs</button>
       <button aria-pressed="false" data-f="beard" data-i="fBeard">Beards</button>
       <button aria-pressed="false" data-f="kids" data-i="fKids">Kids</button>
       <button aria-pressed="false" data-f="shop" data-i="gShop">The shop</button>
@@ -504,13 +526,13 @@ footer a:hover{color:#fff}
   </div></div>
   <section style="padding-top:40px"><div class="wrap">
     <div class="masonry" id="masonry"></div>
-    <p class="note" data-i="glNote">Stock imagery for this concept — replaced with the shop's own work and Instagram feed at launch.</p>
+    <div class="ig-cta"><b data-i="igCtaB">Real cuts from @angeldominicanbarbershop</b><a class="btn btn-white btn-sm" href="https://www.instagram.com/angeldominicanbarbershop/" target="_blank" rel="noopener" data-i="igFollow">Follow on Instagram</a></div>
   </div></section>
 </div>
 
 <!-- ================= ABOUT & REVIEWS ================= -->
 <div class="page" id="p-about">
-  <div class="phero" style="--bg:url('https://images.pexels.com/photos/7697231/pexels-photo-7697231.jpeg?auto=compress&cs=tinysrgb&w=1600')"><div class="wrap">
+  <div class="phero" style="--bg:url('media/ig/CQgdkvLDbRZ.jpg')"><div class="wrap">
     <span class="eyebrow" data-i="abE">Nuestra historia</span>
     <h1 data-i="abH">Kennesaw's Dominican shop.</h1>
   </div></div>
@@ -525,8 +547,9 @@ footer a:hover{color:#fff}
         <li data-i="t3">Walk-ins welcome seven days a week</li>
         <li data-i="t4">Community pop-ups and local vendor days</li>
       </ul>
+      <div class="award"><i>★</i><span data-i="award">Top 3 barbershop in Kennesaw — BusinessRate 2026</span></div>
     </div>
-    <div class="ph"><img loading="lazy" src="https://images.pexels.com/photos/33418521/pexels-photo-33418521.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Barber using clippers in a classic barbershop"></div>
+    <div class="ph"><img loading="lazy" src="media/ig/CU27iYILk3H.jpg" alt="Barber and client at Angel Dominican Barbershop"></div>
   </div></section>
 
   <section style="padding-top:0"><div class="wrap">
@@ -542,7 +565,7 @@ footer a:hover{color:#fff}
       <a class="btn btn-white" style="margin-left:auto" href="https://maps.google.com/?cid=10713657168316869204" target="_blank" rel="noopener" data-i="rvBtn">Read on Google</a>
     </div>
     <div class="themes">
-      <div class="theme"><span class="q">“</span><b data-i="th1">Ask for them by name</b><p data-i="th1p">Customers single out Armando, Johan, Lester and Leo for consistently clean, detailed work.</p></div>
+      <div class="theme"><span class="q">“</span><b data-i="th1">Ask for them by name</b><p data-i="th1p">Customers single out Armando, Johan, Lesther and Leo for consistently clean, detailed work.</p></div>
       <div class="theme"><span class="q">“</span><b data-i="th2">Great with kids</b><p data-i="th2p">Parents say their sons get patient, careful cuts — some reviewers say the kids are treated like royalty.</p></div>
       <div class="theme"><span class="q">“</span><b data-i="th3">Bring the picture</b><p data-i="th3p">Reviewers mention showing a photo and walking out with exactly that look — fades and twists included.</p></div>
     </div>
@@ -552,7 +575,7 @@ footer a:hover{color:#fff}
 
 <!-- ================= VISIT & BOOK ================= -->
 <div class="page" id="p-visit">
-  <div class="phero" style="--bg:url('https://images.pexels.com/photos/31408460/pexels-photo-31408460.jpeg?auto=compress&cs=tinysrgb&w=1600')"><div class="wrap">
+  <div class="phero" style="--bg:url('media/ig/DI4OE05x6W7.jpg')"><div class="wrap">
     <span class="eyebrow" data-i="vsE">Visit &amp; book</span>
     <h1 data-i="vsH">Pull up.</h1>
     <p class="lede">2790 Cobb Pkwy NW, Suite A · Kennesaw, GA 30152</p>
@@ -606,10 +629,10 @@ footer a:hover{color:#fff}
 <footer><div class="wrap">
   <div class="fgrid">
     <div>
-      <div class="brand"><svg width="40" height="40" viewBox="0 0 44 44" aria-hidden="true"><rect width="20" height="20" rx="3" fill="#002D62"/><rect x="24" width="20" height="20" rx="3" fill="#CE1126"/><rect y="24" width="20" height="20" rx="3" fill="#CE1126"/><rect x="24" y="24" width="20" height="20" rx="3" fill="#002D62"/><circle cx="22" cy="22" r="9" fill="#fff"/><text x="22" y="26.5" text-anchor="middle" font-family="Anton,Impact,sans-serif" font-size="13" fill="#002D62">A</text></svg><span class="brand-txt"><b>ANGEL DOMINICAN</b><small>Barbershop · Kennesaw</small></span></div>
+      <div class="brand"><span class="logo-badge"><img src="media/logo.jpg" alt="Angel Dominican Barber Shop logo"></span><span class="brand-txt"><b>ANGEL DOMINICAN</b><small>Barbershop · Kennesaw</small></span></div>
       <p style="color:var(--muted);font-size:14px;margin-top:14px;max-width:300px" data-i="ftP">Dominican barbering on Cobb Parkway. Fades, beards, kids and family — since day one.</p>
       <div class="socials">
-        <a href="#" class="fake" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+        <a href="https://www.instagram.com/angeldominicanbarbershop/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
         <a href="https://www.facebook.com/p/Angel-Dominican-Barbershop-100063739025743/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H7v4h3v8h4v-8h3l1-4h-4V8z"/></svg></a>
         <a href="#" class="fake" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 3c.4 2.3 1.9 3.8 4 4v3.2a7.3 7.3 0 0 1-4-1.2V15a6 6 0 1 1-6-6v3.3a2.8 2.8 0 1 0 2.8 2.8V3H16z"/></svg></a>
       </div>
@@ -618,7 +641,7 @@ footer a:hover{color:#fff}
     <div><h4 data-i="hrs">Hours</h4><ul><li data-i="ftH1">Mon–Sat · 10am–8pm</li><li data-i="ftH2">Sun · 10am–4pm</li></ul></div>
     <div><h4 data-i="ftE">Explore</h4><ul><li><a href="#services" data-i="nav_services">Services</a></li><li><a href="#barbers" data-i="nav_barbers">Barbers</a></li><li><a href="#gallery" data-i="nav_gallery">Gallery</a></li><li><a href="#visit" data-i="nav_visit">Visit &amp; Book</a></li></ul></div>
   </div>
-  <div class="legal"><span>© 2026 Angel Dominican Barbershop</span><span data-i="credit">Website concept by Verde Vortex Marketing Group · stock media via Pexels</span></div>
+  <div class="legal"><span>© 2026 Angel Dominican Barbershop</span><span data-i="credit">Website concept by Verde Vortex Marketing Group · photos &amp; video from @angeldominicanbarbershop</span></div>
 </div></footer>
 
 <div class="mbar"><a href="tel:+13479220625" style="background:#fff;color:var(--blue)" data-i="callS">Call</a><a href="#visit" data-go="book" style="background:var(--red)" data-i="book">Book a chair</a></div>
@@ -632,26 +655,50 @@ footer a:hover{color:#fff}
 <script>
 /* ---------- data ---------- */
 const BARBERS = [
-  {n:"Angel",   r:{en:"Shop founder · Classic & fades", es:"Fundador · Clásicos y fades"}, ig:"angel.dominicanbarber", tags:["fade","kids"], c:"#0a3d7a"},
-  {n:"Armando", r:{en:"Fade specialist", es:"Especialista en fades"}, ig:"armando.cutz_ga", tags:["fade","design"], c:"#8d0d1c", rev:true},
-  {n:"Johan",   r:{en:"Tapers · Line-ups", es:"Tapers · Line-ups"}, ig:"johan.thebarber", tags:["fade","beard"], c:"#00224a", rev:true},
-  {n:"Lester",  r:{en:"Twists · Textured hair", es:"Twists · Cabello rizo"}, ig:"lester.blendz", tags:["fade","design"], c:"#a3111f", rev:true},
-  {n:"Leo",     r:{en:"Kids' cuts · First haircuts", es:"Niños · Primer corte"}, ig:"leo.fadesatl", tags:["kids","fade"], c:"#0b3570", rev:true},
-  {n:"Yeuris",  r:{en:"Beards · Hot towel shaves", es:"Barbas · Afeitado con toalla"}, ig:"yeuris.razor", tags:["beard"], c:"#6f0b17"},
-  {n:"Wander",  r:{en:"Freestyle designs", es:"Diseños freestyle"}, ig:"wander.designs", tags:["design","fade"], c:"#00306a"},
-  {n:"Rafy",    r:{en:"Burst fades · Mullets", es:"Burst fades · Mullets"}, ig:"rafy.cutsupreme", tags:["fade"], c:"#b0182a"},
-  {n:"Kelvin",  r:{en:"Beard sculpting", es:"Esculpido de barba"}, ig:"kelvin.beardking", tags:["beard","fade"], c:"#082a5c"},
-  {n:"Junior",  r:{en:"Classic cuts · Seniors & kids", es:"Clásicos · Mayores y niños"}, ig:"junior.clasico", tags:["kids","beard"], c:"#7c0e1a"}
+  {n:"Ángel",     r:{en:"Owner · Fades & classic cuts", es:"Dueño · Fades y cortes clásicos"}, ig:"angel.dominicanbarber", tags:["fade","kids"], p:"b1"},
+  {n:"Lesther",   r:{en:"Fade specialist · Line-ups", es:"Especialista en fades · Line-ups"}, ig:"lesther.cuts", tags:["fade","design"], p:"b2", rev:true},
+  {n:"Armando",   r:{en:"Tapers · Textured hair", es:"Tapers · Cabello rizo"}, ig:"armando.blendz", tags:["fade","beard"], p:"b4", rev:true},
+  {n:"Johan",     r:{en:"Precision fades · Twists", es:"Fades de precisión · Twists"}, ig:"johan.thebarber", tags:["fade","design"], p:"b3", rev:true},
+  {n:"Leo",       r:{en:"Kids' cuts · First haircuts", es:"Niños · Primer corte"}, ig:"leo.fadesga", tags:["kids","fade"], p:"b8", rev:true},
+  {n:"Alejandro", r:{en:"\"El Paii\" · Scissor work", es:"\"El Paii\" · Trabajo a tijera"}, ig:"alejandro.elpaii", tags:["fade","beard"], p:"b5"},
+  {n:"Kelvin",    r:{en:"Burst fades · Designs", es:"Burst fades · Diseños"}, ig:"kelvin.cutz", tags:["design","fade"], p:"b9"},
+  {n:"Indio",     r:{en:"Freestyle designs", es:"Diseños freestyle"}, ig:"indio.barber", tags:["design"], p:"b10"},
+  {n:"Afry",      r:{en:"Beards · Hot towel shaves", es:"Barbas · Afeitado con toalla"}, ig:"afry.barber", tags:["beard"], p:"b6"},
+  {n:"Ozuna",     r:{en:"Classic cuts · Seniors & kids", es:"Clásicos · Mayores y niños"}, ig:"ozuna.cuts", tags:["kids","beard"], p:"b7"}
 ];
 const SERVICES = [["s1","Signature Fade","$35"],["s2","Classic Haircut","$30"],["s3","Cut + Beard","$45"],["s4","Kids' Cut","$25"],["s5","Senior Cut","$22"],["s6","Line-up / Edge-up","$15"],["s7","Beard Trim & Shape","$20"],["s8","Hot Towel Shave","$30"]];
-const P = id => `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=900`;
+const P = id => `media/ig/${id}.jpg`;
 const GALLERY = [
-  [35157699,"cuts","Low fade, sharp line-up"],[7447146,"cuts","Clipper work"],[2014809,"beard","Straight-razor detail"],
-  [7697354,"kids","Kids' cut"],[785537,"shop","The shop at night"],[7447150,"cuts","Textured top, scissor trim"],
-  [22610337,"beard","Hot towel & beard cream"],[897263,"cuts","Taper finish"],[4969864,"shop","Products & tools"],
-  [33461079,"cuts","Clipper-over-comb"],[7697714,"shop","Caped up and ready"],[11169551,"cuts","Style & finish"],
-  [7697320,"shop","In the chair"],[6487888,"cuts","Scissor detail"],[30807432,"shop","The tools"],[33418521,"cuts","Classic clipper cut"],
-  [7697231,"shop","Waiting area vibes"],[16997937,"cuts","Old-school precision"]
+  ["CQIYzR-jHD1","cuts","Mid fade, sharp line-up"],
+  ["CKWqe8fDBm7","design","Heart design on a skin fade"],
+  ["CZfTfMfvr_Q","kids","Kid's fade with a lightning design"],
+  ["CR2GNOkD4Hu","beard","Full beard, shaped and lined"],
+  ["DI4OE05x6W7","shop","The new shop floor"],
+  ["CJ2NvBZj4RA","cuts","Low taper + beard"],
+  ["CZ045zkuPLf","design","Fade with a part design"],
+  ["CQgxn0PDDMF","beard","Beard and edge-up"],
+  ["CQIYq0VDkRz","cuts","Burst fade, curly top"],
+  ["CQgdkvLDbRZ","shop","Fresh floors, ready to go"],
+  ["CZ04wbjlzmW","kids","Curly top, clean sides"],
+  ["CSSyWj7j1_K","cuts","Textured comb-over"],
+  ["CXH1Iw6M3LL","design","Freestyle design"],
+  ["CL-DXo6jJW9","beard","Beard sculpt"],
+  ["CU27iYILk3H","shop","Good vibes in the chair"],
+  ["CTU90i8lgFk","cuts","Braids with a clean line-up"],
+  ["CZhqyjlOQ1X","design","Wave design with a mullet"],
+  ["COQ6h-gDKXN","cuts","360 waves"],
+  ["CP_ShLbDfWV","kids","Teen taper"],
+  ["DUoOUchkQUi","cuts","Skin fade, full beard"],
+  ["CVrOul4lgyj","design","Part design with curls"],
+  ["CZ00u6LOTUd","beard","Hot-towel beard work"],
+  ["CJ6Ywv1Dko2","cuts","Twists and temple fade"],
+  ["CSNspGTDGwZ","shop","On the clippers"],
+  ["Das6331OH0P","cuts","Fresh at the new shop"],
+  ["CQ4lWcLj6uA","design","Curly top, carved sides"],
+  ["CNfZOSSjK6S","cuts","Textured fringe"],
+  ["CZk91jfFmz0","shop","Busy Saturday"],
+  ["CVtNhfQPmpH","cuts","Line-up with a part"],
+  ["DNuBZcA2FNg","cuts","Low taper, natural top"]
 ];
 const HOURS = [ // 0=Sun
   {d:{en:"Sunday",es:"Domingo"},o:10,c:16},{d:{en:"Monday",es:"Lunes"},o:10,c:20},{d:{en:"Tuesday",es:"Martes"},o:10,c:20},
@@ -663,7 +710,7 @@ const ES = {
   strip1:"Sin cita, bienvenidos",strip2:"Cajero ATM en la barbería",nav_home:"Inicio",nav_services:"Servicios",nav_barbers:"Barberos",nav_gallery:"Galería",nav_about:"Nosotros y reseñas",nav_visit:"Visítanos",
   book:"Reserva tu silla",call:"Llama a la barbería",callS:"Llamar",h1a:"Cortes frescos.",h1b:"Manos dominicanas.",
   heroP:"Fades limpios, line-ups perfectos y barbas al estilo dominicano — en la Cobb Parkway de Kennesaw. Trae la foto. Nosotros la hacemos realidad.",
-  st1:"Calificación en Google",st2:"Reseñas en Google",st3:"Barberos",st4:"Días a la semana",
+  st1:"Calificación en Google",st2:"Reseñas en Google",st3:"Barberos",st4:"Kennesaw · BusinessRate 2026",
   exE:"La experiencia",exH:"Más que un corte.",exS:"Es familia.",exP:"La barbería dominicana es la sala del barrio — la música sonando, la conversación corriendo y un barbero que se toma su tiempo para dejarte bien.",
   c1h:"Fades de precisión",c1p:"Skin, low, mid, high, burst — degradados limpios y bien difuminados. Enséñanos la foto y lo igualamos.",
   c2h:"Los niños, como reyes",c2p:"Barberos pacientes, ideales para el primer corte, y un ambiente familiar que le facilita el sábado a los padres.",
@@ -681,13 +728,13 @@ const ES = {
   priceNote:"Precios de ejemplo para este concepto — la barbería confirmará los precios finales.",
   brE:"Los barberos",brH:"Conoce al equipo.",brP:"Diez sillas, diez estilos. Toca un barbero para ver sus enlaces, seguir su trabajo o reservar directo con él.",
   fAll:"Todos",fFade:"Fades",fBeard:"Barbas",fKids:"Niños",fDesign:"Diseños",gCuts:"Cortes",gShop:"La barbería",
-  brNote:"Perfiles, usuarios y enlaces son de ejemplo para este concepto. Los marcados \"En reseñas\" son nombrados por clientes en Google; las fotos y cuentas reales se agregan al lanzar.",
-  glE:"Galería",glH:"Recién salidos de la silla.",glNote:"Imágenes de stock para este concepto — se reemplazan con el trabajo real y el Instagram de la barbería.",
+  brNote:"Los nombres vienen del Instagram de la barbería y de reseñas en Google (\"En reseñas\" = nombrados por clientes). Las fotos, usuarios y enlaces son de ejemplo para este concepto — se cambian por los reales al lanzar.",
+  glE:"Galería",glH:"Recién salidos de la silla.",
   abE:"Nuestra historia",abH:"La barbería dominicana de Kennesaw.",ab2E:"Quiénes somos",ab2H:"De la isla a la Cobb Parkway.",
   ab2P:"En la República Dominicana, la barbería es donde se reúne el barrio — por el corte, la conversación, la bachata de fondo y el dominó después. Angel Dominican Barbershop trajo esa tradición a Kennesaw.",
   t1:"Sirviendo a Kennesaw desde el 2790 Cobb Pkwy NW",t2:"Hablamos español — y inglés",t3:"Sin cita, los siete días",t4:"Pop-ups comunitarios y días de vendedores locales",
   rvE:"Reseñas",rvH:"Lo que dice el barrio.",rvB:"Más de 165 reseñas en Google",rvP:"Los temas que más se repiten:",rvBtn:"Leer en Google",
-  th1:"Pídelos por nombre",th1p:"Los clientes destacan a Armando, Johan, Lester y Leo por un trabajo limpio y detallado.",
+  th1:"Pídelos por nombre",th1p:"Los clientes destacan a Armando, Johan, Lesther y Leo por un trabajo limpio y detallado.",
   th2:"Excelentes con los niños",th2p:"Los padres dicen que sus hijos reciben cortes con paciencia — algunos dicen que los tratan como reyes.",
   th3:"Trae la foto",th3p:"Varios cuentan que enseñaron una foto y salieron con ese mismo look — fades y twists incluidos.",
   rvNote:"Temas resumidos de reseñas públicas en Google. Al lanzar, esta sección puede mostrar reseñas en vivo.",
@@ -700,7 +747,8 @@ const ES = {
   q3:"¿Cómo pago?",a3:"Hay un cajero ATM dentro de la barbería. Pregúntale a tu barbero por tarjeta y apps de pago.",
   q4:"¿Hablan español?",a4:"¡Claro que sí! Nuestro equipo habla español e inglés.",q5:"¿La barbería es accesible?",a5:"Sí — hay parqueo accesible para sillas de ruedas y baño.",
   ftP:"Barbería dominicana en la Cobb Parkway. Fades, barbas, niños y familia — desde el primer día.",ftV:"Visítanos",ftH1:"Lun–Sáb · 10am–8pm",ftH2:"Dom · 10am–4pm",ftE:"Explora",
-  credit:"Concepto de sitio web por Verde Vortex Marketing Group · media de stock vía Pexels"
+  credit:"Concepto de sitio web por Verde Vortex Marketing Group · fotos y video de @angeldominicanbarbershop",
+  moreIg:"Más en Instagram →",igCtaB:"Cortes reales de @angeldominicanbarbershop",igFollow:"Síguenos en Instagram",award:"Top 3 barberías en Kennesaw — BusinessRate 2026"
 };
 let lang = "en";
 const EN = {};
@@ -728,7 +776,7 @@ const IC = {
   sil:'<svg viewBox="0 0 80 60" fill="white"><circle cx="40" cy="20" r="14"/><path d="M8 60c2-16 16-24 32-24s30 8 32 24z"/></svg>',
   star:'<svg viewBox="0 0 24 24"><path fill="#fff" d="M12 2l3 6.9 7.5.6-5.7 4.9 1.8 7.3L12 17.8 5.4 21.7l1.8-7.3L1.5 9.5 9 8.9z"/></svg>'
 };
-const avatar = (b, big) => `<div class="avatar"${big?' style="width:110px;height:110px"':''}><div class="face" style="background:radial-gradient(circle at 30% 25%, ${b.c}, #000c1f 85%)">${IC.sil}<b>${b.n[0]}</b></div><span class="chip">${IC.sc}</span></div>`;
+const avatar = (b, big) => `<div class="avatar"${big?' style="width:110px;height:110px"':''}><div class="face" style="background:#0a1f44"><img src="media/barbers/${b.p}.jpg" alt="${b.n}" loading="lazy"></div><span class="chip">${IC.sc}</span></div>`;
 
 /* ---------- teams ---------- */
 let brF = "all";
@@ -796,7 +844,7 @@ document.getElementById("glFilter").onclick = e => {
 };
 const lb = document.getElementById("lb"), lbImg = lb.querySelector("img"); let li = 0;
 const vis = () => [...mas.querySelectorAll("figure:not(.hide)")];
-function show(k){ const v=vis(); li=(k+v.length)%v.length; const g=GALLERY[+v[li].dataset.k]; lbImg.src=P(g[0]).replace("w=900","w=1800"); lbImg.alt=g[2]; }
+function show(k){ const v=vis(); li=(k+v.length)%v.length; const g=GALLERY[+v[li].dataset.k]; lbImg.src=P(g[0]); lbImg.alt=g[2]; }
 mas.onclick = e => { const f=e.target.closest("figure"); if(!f) return; lb.classList.add("on"); show(vis().indexOf(f)); };
 lb.onclick = e => { if(e.target.closest(".nx")) show(li+1); else if(e.target.closest(".pv")) show(li-1); else if(e.target!==lbImg) lb.classList.remove("on"); };
 document.addEventListener("keydown", e => {
