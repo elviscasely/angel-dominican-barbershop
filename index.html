@@ -353,6 +353,15 @@ footer a:hover{color:#fff}
 .pole-spin-lg{animation-duration:4s}
 @keyframes pole{from{transform:translateY(0)}to{transform:translateY(48.7px)}}
 .pole-spin{animation-name:poleS}@keyframes poleS{from{transform:translateY(0)}to{transform:translateY(20.45px)}}
+
+.team{grid-template-columns:repeat(5,minmax(0,1fr))}
+.barber{min-width:0}
+.barber .ig{max-width:100%;min-width:0}
+.barber .ig span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+.barber .ig svg{flex:none}
+@media (max-width:1060px){.team{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:560px){.team{grid-template-columns:repeat(2,minmax(0,1fr))}.barber .ig{font-size:11.5px;padding:5px 8px}.barber .role{font-size:11.5px}}
+html,body{max-width:100%;overflow-x:clip}
 </style>
 </head>
 <body>
@@ -842,7 +851,7 @@ function card(b,i){
     ${b.rev?`<span class="tag-rev">${lang==="es"?"En reseñas":"In reviews"}</span>`:""}
     ${avatar(b)}
     <h3>${b.n}</h3><div class="role">${b.r[lang]}</div>
-    <a class="ig fake" href="#">${IC.ig}@${b.ig}</a>
+    <a class="ig fake" href="#">${IC.ig}<span>@${b.ig}</span></a>
     <div class="acts"><button class="lt" data-lt="${i}">${lang==="es"?"Enlaces":"Links"}</button><button class="bk" data-bk="${i}">${lang==="es"?"Reservar":"Book"}</button></div>
   </article>`;
 }
