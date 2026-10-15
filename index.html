@@ -1,0 +1,870 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Angel Dominican Barbershop · Kennesaw, GA</title>
+<meta name="description" content="Dominican barbershop in Kennesaw, GA. Fades, tapers, beard work and kids' cuts. Walk-ins welcome. 2790 Cobb Pkwy NW.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=DM+Serif+Display:ital@1&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#002D62; --blue-2:#0a3d7a; --blue-deep:#001634; --ink:#000c1f;
+  --red:#CE1126; --red-2:#e2263b; --white:#ffffff; --cream:#f4f1ea;
+  --muted:#9fb0c8; --line:rgba(255,255,255,.12);
+  --display:'Anton', Impact, sans-serif; --body:'DM Sans', system-ui, sans-serif; --serif:'DM Serif Display', Georgia, serif;
+  --r:14px; --max:1200px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--white);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,video{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+:focus-visible{outline:3px solid var(--red-2);outline-offset:3px;border-radius:6px}
+
+/* ---------- top strip ---------- */
+.strip{background:var(--red);font-size:13px;font-weight:500;letter-spacing:.02em}
+.strip .wrap{display:flex;gap:18px;justify-content:center;align-items:center;padding:8px 20px;flex-wrap:wrap;text-align:center}
+.strip span{display:inline-flex;align-items:center;gap:6px}
+.strip .dot{width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,.6)}
+
+/* ---------- header ---------- */
+header{position:sticky;top:0;z-index:50;background:rgba(0,12,31,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px;gap:16px}
+.brand{display:flex;align-items:center;gap:12px;min-width:0}
+.brand svg{flex:none}
+.brand-txt{display:flex;flex-direction:column;line-height:1}
+.brand-txt b{font-family:var(--display);font-weight:400;font-size:22px;letter-spacing:.04em}
+.brand-txt small{font-size:10.5px;letter-spacing:.28em;color:var(--muted);margin-top:5px;text-transform:uppercase}
+.links{display:flex;gap:4px;align-items:center}
+.links a{padding:8px 12px;border-radius:999px;font-size:14px;font-weight:500;color:#d5deeb;transition:.2s}
+.links a:hover{color:#fff;background:rgba(255,255,255,.06)}
+.links a.active{color:#fff;background:rgba(255,255,255,.1)}
+.nav-r{display:flex;gap:10px;align-items:center}
+.lang{display:flex;border:1px solid var(--line);border-radius:999px;padding:3px;font-size:12px;font-weight:700}
+.lang button{padding:5px 10px;border-radius:999px;color:var(--muted)}
+.lang button[aria-pressed=true]{background:#fff;color:var(--blue)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 22px;border-radius:999px;font-weight:700;font-size:15px;letter-spacing:.01em;transition:transform .2s, background .2s, box-shadow .2s;white-space:nowrap}
+.btn:active{transform:scale(.97)}
+.btn-red{background:var(--red);color:#fff;box-shadow:0 8px 24px -8px rgba(206,17,38,.7)}
+.btn-red:hover{background:var(--red-2)}
+.btn-ghost{border:1.5px solid rgba(255,255,255,.4);color:#fff}
+.btn-ghost:hover{background:rgba(255,255,255,.08)}
+.btn-white{background:#fff;color:var(--blue)}
+.btn-sm{padding:9px 16px;font-size:13.5px}
+.burger{display:none;width:42px;height:42px;border-radius:50%;border:1px solid var(--line);align-items:center;justify-content:center}
+.burger span,.burger span::before,.burger span::after{display:block;width:18px;height:2px;background:#fff;position:relative;transition:.25s}
+.burger span::before,.burger span::after{content:"";position:absolute}
+.burger span::before{top:-6px}.burger span::after{top:6px}
+
+/* ---------- pages ---------- */
+.page{display:none;animation:fade .45s ease}
+.page.on{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+section{padding:96px 0}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--red-2)}
+.eyebrow::before{content:"";width:28px;height:2px;background:linear-gradient(90deg,var(--red) 50%,var(--blue-2) 50%)}
+h1,h2,h3{font-family:var(--display);font-weight:400;letter-spacing:.01em;line-height:.98;text-transform:uppercase}
+h2{font-size:clamp(40px,6vw,72px);margin:14px 0 18px}
+h3{font-size:24px;letter-spacing:.02em}
+.lede{color:#c4cfdf;font-size:18px;max-width:620px}
+em.s{font-family:var(--serif);font-style:italic;text-transform:none;color:var(--red-2);letter-spacing:0}
+
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:calc(100svh - 108px);display:flex;align-items:flex-end;overflow:hidden;padding:0}
+.hero video,.hero .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero::after{content:"";position:absolute;inset:0;background:
+  linear-gradient(180deg,rgba(0,12,31,.25) 0%,rgba(0,12,31,.35) 40%,var(--ink) 98%),
+  linear-gradient(90deg,rgba(0,45,98,.7) 0%,rgba(0,45,98,0) 60%)}
+.hero .wrap{position:relative;z-index:2;padding-bottom:72px;width:100%}
+.hero h1{font-size:clamp(56px,11vw,148px);max-width:1000px}
+.hero h1 .r{color:var(--red-2)}
+.hero p{font-size:clamp(17px,2vw,20px);color:#e1e8f2;max-width:560px;margin:22px 0 30px}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap}
+.flagbar{position:absolute;left:0;right:0;bottom:0;height:6px;z-index:3;display:grid;grid-template-columns:1fr 14px 1fr}
+.flagbar i:nth-child(1){background:var(--blue)}.flagbar i:nth-child(2){background:#fff}.flagbar i:nth-child(3){background:var(--red)}
+.open-pill{display:inline-flex;align-items:center;gap:8px;background:rgba(0,0,0,.45);border:1px solid var(--line);padding:7px 14px;border-radius:999px;font-size:13px;font-weight:500;margin-bottom:22px;backdrop-filter:blur(8px)}
+.open-pill i{width:8px;height:8px;border-radius:50%;background:#3ddc84;box-shadow:0 0 0 4px rgba(61,220,132,.2)}
+.open-pill.closed i{background:var(--red-2);box-shadow:0 0 0 4px rgba(226,38,59,.2)}
+
+/* ---------- stats ---------- */
+.stats{background:var(--blue);padding:0}
+.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.stat{padding:30px 20px;border-right:1px solid rgba(255,255,255,.14);text-align:center}
+.stat:last-child{border-right:0}
+.stat b{display:block;font-family:var(--display);font-weight:400;font-size:44px;line-height:1}
+.stat span{font-size:13px;color:#c9d6ea;letter-spacing:.06em;text-transform:uppercase}
+
+/* ---------- feature cards ---------- */
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px}
+.card{background:linear-gradient(160deg,#071c3d,#020f24);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;transition:transform .3s, border-color .3s}
+.card:hover{transform:translateY(-4px);border-color:rgba(255,255,255,.25)}
+.card .img{aspect-ratio:4/3;overflow:hidden}
+.card .img img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.card:hover .img img{transform:scale(1.05)}
+.card .bd{padding:22px 22px 26px}
+.card p{color:#b9c6d9;margin-top:8px;font-size:15px}
+.num{font-family:var(--display);color:var(--red-2);font-size:14px;letter-spacing:.2em}
+
+/* ---------- reel ---------- */
+.reel{display:grid;grid-template-columns:1.3fr 1fr .62fr;gap:14px;margin-top:44px;height:440px}
+.reel figure{position:relative;border-radius:var(--r);overflow:hidden;background:#061733}
+.reel video{width:100%;height:100%;object-fit:cover}
+.reel figcaption{position:absolute;left:14px;bottom:12px;font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;background:rgba(0,12,31,.7);padding:6px 10px;border-radius:6px}
+
+/* ---------- split ---------- */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.split .ph{border-radius:var(--r);overflow:hidden;aspect-ratio:4/5;position:relative}
+.split .ph img{width:100%;height:100%;object-fit:cover}
+.split .ph::after{content:"";position:absolute;inset:auto 0 0 0;height:8px;background:linear-gradient(90deg,var(--blue) 0 45%,#fff 45% 55%,var(--red) 55%)}
+.ticks{list-style:none;margin-top:26px;display:grid;gap:14px}
+.ticks li{display:flex;gap:14px;align-items:flex-start;color:#d2dbe8}
+.ticks li::before{content:"";flex:none;width:22px;height:22px;margin-top:2px;border-radius:50%;background:var(--red) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.5'%3E%3Cpath d='M5 12l5 5 9-10'/%3E%3C/svg%3E") center/12px no-repeat}
+
+/* ---------- pole marquee ---------- */
+.marquee{background:#fff;color:var(--blue);overflow:hidden;padding:16px 0;border-block:6px solid var(--red)}
+.marquee .track{display:flex;gap:48px;white-space:nowrap;width:max-content;animation:mq 30s linear infinite;font-family:var(--display);font-size:30px;text-transform:uppercase}
+.marquee .track span{display:inline-flex;align-items:center;gap:48px}
+.marquee .track span::after{content:"✦";color:var(--red);font-size:20px}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* ---------- barber avatars ---------- */
+.avatar{position:relative;width:96px;height:96px;border-radius:50%;padding:4px;background:conic-gradient(var(--blue) 0 42%, #fff 42% 50%, var(--red) 50% 92%, #fff 92% 100%);flex:none}
+.avatar .face{width:100%;height:100%;border-radius:50%;display:grid;place-items:center;font-family:var(--display);font-size:34px;color:#fff;position:relative;overflow:hidden}
+.avatar .face svg{position:absolute;bottom:-6px;left:50%;transform:translateX(-50%);width:78%;opacity:.22}
+.avatar .face b{position:relative;font-weight:400;z-index:1}
+.avatar .chip{position:absolute;right:-2px;bottom:2px;width:28px;height:28px;border-radius:50%;background:var(--red);border:3px solid var(--ink);display:grid;place-items:center}
+.avatar .chip svg{width:13px;height:13px}
+
+.team{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;margin-top:44px}
+.barber{background:linear-gradient(170deg,#08214a 0%,#030f24 70%);border:1px solid var(--line);border-radius:18px;padding:26px 16px 18px;text-align:center;display:flex;flex-direction:column;align-items:center;transition:transform .3s,border-color .3s;position:relative}
+.barber:hover{transform:translateY(-4px);border-color:rgba(255,255,255,.28)}
+.barber h3{font-size:24px;margin-top:16px}
+.barber .role{font-size:12.5px;color:var(--muted);margin-top:4px;min-height:38px}
+.barber .ig{display:inline-flex;align-items:center;gap:6px;margin-top:12px;font-size:13px;font-weight:500;color:#e6edf6;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.06)}
+.barber .ig svg{width:14px;height:14px}
+.barber .acts{display:grid;grid-template-columns:1fr 1fr;gap:8px;width:100%;margin-top:14px}
+.barber .acts button{padding:9px 6px;border-radius:10px;font-size:12.5px;font-weight:700;letter-spacing:.02em}
+.barber .acts .lt{background:rgba(255,255,255,.08)}
+.barber .acts .lt:hover{background:rgba(255,255,255,.14)}
+.barber .acts .bk{background:var(--red)}
+.barber .acts .bk:hover{background:var(--red-2)}
+.tag-rev{position:absolute;top:12px;left:12px;font-size:9.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#ffd5da;background:rgba(206,17,38,.25);border:1px solid rgba(206,17,38,.5);padding:3px 7px;border-radius:999px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:28px}
+.chips button{padding:8px 16px;border-radius:999px;border:1px solid var(--line);font-size:13.5px;font-weight:500;color:#cdd8e8;transition:.2s}
+.chips button[aria-pressed=true]{background:#fff;color:var(--blue);border-color:#fff}
+.note{font-size:13px;color:var(--muted);margin-top:22px;display:flex;gap:8px;align-items:flex-start}
+.note::before{content:"i";flex:none;width:18px;height:18px;border-radius:50%;border:1px solid var(--muted);display:grid;place-items:center;font-size:11px;font-weight:700;font-style:italic;margin-top:1px}
+
+/* ---------- services ---------- */
+.menu{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:44px}
+.menu-col{background:#04142e;border:1px solid var(--line);border-radius:18px;padding:30px}
+.menu-col h3{display:flex;align-items:center;gap:12px;margin-bottom:10px;font-size:28px}
+.menu-col h3::before{content:"";width:10px;height:28px;background:linear-gradient(var(--blue-2) 50%,var(--red) 50%);border-radius:2px}
+.item{display:grid;grid-template-columns:1fr auto;gap:4px 16px;padding:18px 0;border-bottom:1px dashed rgba(255,255,255,.14)}
+.item:last-child{border-bottom:0}
+.item b{font-size:17px;font-weight:700}
+.item .p{font-family:var(--display);font-size:24px;color:#fff;grid-row:span 2;align-self:center}
+.item .p small{font-family:var(--body);font-size:11px;color:var(--muted);display:block;text-align:right;letter-spacing:.08em;text-transform:uppercase}
+.item span{font-size:14px;color:#a9b8cd}
+.item .dur{color:var(--red-2);font-weight:500}
+.perks{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:20px}
+.perk{border:1px solid var(--line);border-radius:14px;padding:20px;background:rgba(255,255,255,.02)}
+.perk svg{width:26px;height:26px;color:var(--red-2)}
+.perk b{display:block;margin-top:10px;font-size:15px}
+.perk span{font-size:13.5px;color:#a9b8cd}
+
+/* ---------- gallery ---------- */
+.masonry{columns:3 280px;column-gap:14px;margin-top:30px}
+.masonry figure{break-inside:avoid;margin-bottom:14px;border-radius:12px;overflow:hidden;position:relative;cursor:zoom-in;background:#061733}
+.masonry img{width:100%;transition:transform .5s}
+.masonry figure:hover img{transform:scale(1.04)}
+.masonry figcaption{position:absolute;inset:auto 0 0 0;padding:30px 14px 12px;background:linear-gradient(transparent,rgba(0,12,31,.85));font-size:13px;font-weight:500;opacity:0;transition:.3s}
+.masonry figure:hover figcaption{opacity:1}
+.masonry figure.hide{display:none}
+.lb{position:fixed;inset:0;z-index:90;background:rgba(0,8,20,.94);display:none;align-items:center;justify-content:center;padding:20px}
+.lb.on{display:flex}
+.lb img{max-height:86vh;border-radius:10px}
+.lb .x{position:absolute;top:18px;right:18px;width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.1);font-size:24px}
+.lb .nv{position:absolute;top:50%;transform:translateY(-50%);width:50px;height:50px;border-radius:50%;background:rgba(255,255,255,.1);font-size:22px}
+.lb .pv{left:16px}.lb .nx{right:16px}
+
+/* ---------- reviews ---------- */
+.rate{display:flex;gap:40px;align-items:center;flex-wrap:wrap;margin-top:36px;padding:34px;border-radius:20px;background:linear-gradient(120deg,var(--blue) 0%,#06306a 55%,var(--red) 140%)}
+.rate .big{font-family:var(--display);font-size:110px;line-height:.8}
+.stars{display:flex;gap:4px;margin:8px 0}
+.stars svg{width:22px;height:22px}
+.themes{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:22px}
+.theme{background:#04142e;border:1px solid var(--line);border-radius:16px;padding:26px;position:relative}
+.theme .q{font-family:var(--serif);font-size:60px;line-height:.5;color:var(--red);height:26px;display:block}
+.theme b{font-size:18px;display:block;margin:10px 0 6px}
+.theme p{color:#b3c1d5;font-size:15px}
+
+/* ---------- visit ---------- */
+.visit{display:grid;grid-template-columns:1.05fr 1fr;gap:24px;margin-top:40px}
+.panel{background:#04142e;border:1px solid var(--line);border-radius:18px;padding:28px}
+.hours{list-style:none;margin-top:10px}
+.hours li{display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.08);font-size:15px}
+.hours li.today{color:#fff;font-weight:700}
+.hours li.today span:first-child::after{content:"  •  Today";color:var(--red-2);font-weight:500;font-size:12px}
+.hours li span:last-child{color:#c3cfe0}
+.map{border-radius:18px;overflow:hidden;border:1px solid var(--line);min-height:340px;background:#061733}
+.map iframe{width:100%;height:100%;min-height:340px;border:0;filter:grayscale(.3) contrast(1.05)}
+.info{display:grid;gap:16px;margin-top:22px}
+.info a,.info div{display:flex;gap:14px;align-items:center;font-size:15px}
+.info svg{width:20px;height:20px;color:var(--red-2);flex:none}
+form.book{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
+form.book label{display:grid;gap:6px;font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#c3cfe0}
+form.book .full{grid-column:1/-1}
+form.book input,form.book select,form.book textarea{font:inherit;font-size:15px;text-transform:none;letter-spacing:0;font-weight:400;padding:13px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.18);background:#020c1d;color:#fff;width:100%}
+form.book select option{background:#020c1d}
+form.book input:focus,form.book select:focus,form.book textarea:focus{outline:none;border-color:var(--red-2);box-shadow:0 0 0 3px rgba(226,38,59,.25)}
+.ok{display:none;margin-top:16px;padding:18px;border-radius:12px;background:rgba(61,220,132,.1);border:1px solid rgba(61,220,132,.35)}
+.ok.on{display:block}
+.faq{margin-top:40px;display:grid;gap:10px}
+.faq details{background:#04142e;border:1px solid var(--line);border-radius:14px;padding:4px 22px}
+.faq summary{list-style:none;cursor:pointer;padding:16px 0;font-weight:700;display:flex;justify-content:space-between;gap:20px}
+.faq summary::after{content:"+";font-size:22px;color:var(--red-2);line-height:1}
+.faq details[open] summary::after{content:"–"}
+.faq p{color:#b3c1d5;padding-bottom:18px;font-size:15px}
+
+/* ---------- CTA band ---------- */
+.band{position:relative;overflow:hidden;padding:0}
+.band .in{display:grid;grid-template-columns:1fr 18px 1fr;min-height:320px}
+.band .b1{background:var(--blue);padding:56px 40px;display:flex;flex-direction:column;justify-content:center}
+.band .x{background:#fff}
+.band .b2{background:var(--red);padding:56px 40px;display:flex;flex-direction:column;justify-content:center}
+.band h2{font-size:clamp(36px,5vw,60px);margin:0 0 14px}
+.band p{color:rgba(255,255,255,.85);max-width:420px;margin-bottom:22px}
+
+/* ---------- linktree modal ---------- */
+.modal{position:fixed;inset:0;z-index:95;background:rgba(0,8,20,.82);backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;padding:20px}
+.modal.on{display:flex}
+.lt-card{width:100%;max-width:380px;border-radius:24px;overflow:hidden;background:linear-gradient(180deg,var(--blue) 0%,#011a3c 60%,#000c1f 100%);border:1px solid rgba(255,255,255,.18);position:relative;animation:pop .3s ease}
+@keyframes pop{from{transform:scale(.94);opacity:0}}
+.lt-card .top{padding:34px 24px 10px;text-align:center;display:flex;flex-direction:column;align-items:center}
+.lt-card .top h3{margin-top:14px;font-size:30px}
+.lt-card .top p{color:#c6d3e6;font-size:14px}
+.lt-card ul{list-style:none;padding:14px 22px 10px;display:grid;gap:10px}
+.lt-card li a{display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:14px;background:#fff;color:var(--blue);font-weight:700;font-size:15px;transition:transform .2s}
+.lt-card li a:hover{transform:scale(1.02)}
+.lt-card li a svg{width:20px;height:20px;flex:none}
+.lt-card li a.red{background:var(--red);color:#fff}
+.lt-card .foot{text-align:center;font-size:11.5px;color:var(--muted);padding:6px 20px 22px}
+.lt-card .x{position:absolute;top:12px;right:12px;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.12);font-size:20px}
+.toast{position:fixed;left:50%;bottom:90px;transform:translateX(-50%) translateY(20px);background:#fff;color:var(--blue);padding:12px 18px;border-radius:999px;font-weight:700;font-size:14px;opacity:0;transition:.3s;z-index:99;pointer-events:none;box-shadow:0 10px 30px rgba(0,0,0,.4)}
+.toast.on{opacity:1;transform:translateX(-50%)}
+
+/* ---------- footer ---------- */
+footer{background:#000814;border-top:1px solid var(--line);padding:60px 0 30px}
+.fgrid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:30px}
+footer h4{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+footer ul{list-style:none;display:grid;gap:8px;font-size:14.5px;color:#c9d4e3}
+footer a:hover{color:#fff}
+.legal{margin-top:44px;padding-top:22px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:12.5px;color:var(--muted)}
+.socials{display:flex;gap:10px;margin-top:18px}
+.socials a{width:40px;height:40px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center}
+.socials a:hover{background:rgba(255,255,255,.08)}
+.socials svg{width:18px;height:18px}
+
+/* mobile action bar */
+.mbar{display:none;position:fixed;left:12px;right:12px;bottom:12px;z-index:60;gap:10px;grid-template-columns:1fr 1fr}
+.mbar a{padding:15px;border-radius:999px;text-align:center;font-weight:700;font-size:15px}
+
+/* page hero */
+.phero{position:relative;padding:110px 0 70px;overflow:hidden;border-bottom:1px solid var(--line)}
+.phero::before{content:"";position:absolute;inset:0;background:var(--bg) center/cover;opacity:.28}
+.phero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--ink) 20%,rgba(0,12,31,.4))}
+.phero .wrap{position:relative;z-index:1}
+.phero h1{font-size:clamp(56px,9vw,120px);margin-top:12px}
+
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+@media (max-width:1060px){
+  .team{grid-template-columns:repeat(3,1fr)}
+  .links{display:none}
+  .burger{display:inline-flex}
+  header.open .links{display:flex;position:absolute;top:72px;left:0;right:0;flex-direction:column;align-items:stretch;padding:12px 16px 20px;background:rgba(0,12,31,.98);border-bottom:1px solid var(--line)}
+  header.open .links a{padding:14px 16px;font-size:17px}
+  .perks{grid-template-columns:repeat(2,1fr)}
+  .fgrid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:820px){
+  section{padding:72px 0}
+  .grid3,.themes{grid-template-columns:1fr}
+  .split,.visit,.menu{grid-template-columns:1fr;gap:28px}
+  .stats .wrap{grid-template-columns:repeat(2,1fr)}
+  .stat:nth-child(2){border-right:0}
+  .stat:nth-child(-n+2){border-bottom:1px solid rgba(255,255,255,.14)}
+  .reel{grid-template-columns:1fr 1fr;height:auto}
+  .reel figure{aspect-ratio:3/4}
+  .reel figure:first-child{grid-column:1/-1;aspect-ratio:16/9}
+  .band .in{grid-template-columns:1fr;grid-template-rows:auto 14px auto}
+  .mbar{display:grid}
+  body{padding-bottom:78px}
+  .nav-r .btn-red{display:none}
+  .brand-txt small{display:none}
+}
+@media (max-width:560px){
+  .team{grid-template-columns:repeat(2,1fr);gap:12px}
+  .barber{padding:22px 10px 14px}
+  .avatar{width:80px;height:80px}
+  .barber h3{font-size:21px}
+  form.book{grid-template-columns:1fr}
+  .strip .hide-s{display:none}
+  .rate{padding:24px;gap:18px}
+  .rate .big{font-size:84px}
+  .fgrid{grid-template-columns:1fr}
+  .menu-col{padding:22px}
+  .brand-txt b{font-size:18px}
+}
+</style>
+</head>
+<body>
+
+<!-- top strip -->
+<div class="strip"><div class="wrap">
+  <span data-i="strip1">Walk-ins welcome</span><i class="dot"></i>
+  <a href="tel:+13479220625"><span>(347) 922-0625</span></a><i class="dot hide-s"></i>
+  <span class="hide-s" data-i="strip2">ATM on site</span>
+</div></div>
+
+<header id="hdr">
+  <div class="wrap nav">
+    <a href="#home" class="brand" aria-label="Angel Dominican Barbershop home">
+      <svg width="44" height="44" viewBox="0 0 44 44" aria-hidden="true">
+        <rect x="0" y="0" width="20" height="20" rx="3" fill="#002D62"/><rect x="24" y="0" width="20" height="20" rx="3" fill="#CE1126"/>
+        <rect x="0" y="24" width="20" height="20" rx="3" fill="#CE1126"/><rect x="24" y="24" width="20" height="20" rx="3" fill="#002D62"/>
+        <circle cx="22" cy="22" r="9" fill="#fff"/><text x="22" y="26.5" text-anchor="middle" font-family="Anton,Impact,sans-serif" font-size="13" fill="#002D62">A</text>
+      </svg>
+      <span class="brand-txt"><b>ANGEL DOMINICAN</b><small>Barbershop · Kennesaw</small></span>
+    </a>
+    <nav class="links" aria-label="Main">
+      <a href="#home" data-i="nav_home">Home</a>
+      <a href="#services" data-i="nav_services">Services</a>
+      <a href="#barbers" data-i="nav_barbers">Barbers</a>
+      <a href="#gallery" data-i="nav_gallery">Gallery</a>
+      <a href="#about" data-i="nav_about">About &amp; Reviews</a>
+      <a href="#visit" data-i="nav_visit">Visit &amp; Book</a>
+    </nav>
+    <div class="nav-r">
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang="es" aria-pressed="false">ES</button>
+      </div>
+      <a href="#visit" class="btn btn-red btn-sm" data-go="book" data-i="book">Book a chair</a>
+      <button class="burger" aria-label="Menu" aria-expanded="false" id="burger"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- ================= HOME ================= -->
+<div class="page" id="p-home">
+  <section class="hero">
+    <img class="poster" src="https://images.pexels.com/videos/7697073/adult-barber-barber-shop-barbering-7697073.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="">
+    <video autoplay muted loop playsinline preload="metadata" poster="https://images.pexels.com/videos/7697073/adult-barber-barber-shop-barbering-7697073.jpeg?auto=compress&cs=tinysrgb&w=1600">
+      <source src="https://videos.pexels.com/video-files/7697073/7697073-hd_1920_1080_30fps.mp4" type="video/mp4">
+    </video>
+    <div class="wrap">
+      <div class="open-pill" id="openPill"><i></i><span id="openTxt">Open today</span></div>
+      <h1><span data-i="h1a">Fresh cuts.</span><br><span class="r" data-i="h1b">Dominican hands.</span></h1>
+      <p data-i="heroP">Sharp fades, clean line-ups and beard work the Dominican way — right on Cobb Parkway in Kennesaw. Bring the picture. We'll bring it to life.</p>
+      <div class="cta">
+        <a href="#visit" class="btn btn-red" data-go="book" data-i="book">Book a chair</a>
+        <a href="tel:+13479220625" class="btn btn-ghost">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+          <span data-i="call">Call the shop</span></a>
+      </div>
+    </div>
+    <div class="flagbar"><i></i><i></i><i></i></div>
+  </section>
+
+  <section class="stats"><div class="wrap">
+    <div class="stat"><b>4.4★</b><span data-i="st1">Google rating</span></div>
+    <div class="stat"><b>165+</b><span data-i="st2">Google reviews</span></div>
+    <div class="stat"><b>10</b><span data-i="st3">Barbers on deck</span></div>
+    <div class="stat"><b>7</b><span data-i="st4">Days a week</span></div>
+  </div></section>
+
+  <section><div class="wrap">
+    <span class="eyebrow" data-i="exE">The experience</span>
+    <h2><span data-i="exH">More than a cut.</span> <em class="s" data-i="exS">Es familia.</em></h2>
+    <p class="lede" data-i="exP">A Dominican barbershop is the neighborhood living room — music on, conversation going, and a barber who takes his time getting it right.</p>
+    <div class="grid3">
+      <article class="card"><div class="img"><img loading="lazy" src="https://images.pexels.com/photos/35157699/pexels-photo-35157699.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Close-up of a precision fade haircut"></div>
+        <div class="bd"><span class="num">01</span><h3 data-i="c1h">Precision fades</h3><p data-i="c1p">Skin, low, mid, high, burst — tapered clean and blended tight. Show us a photo and we'll match it.</p></div></article>
+      <article class="card"><div class="img"><img loading="lazy" src="https://images.pexels.com/photos/7697354/pexels-photo-7697354.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Barber cutting a young boy's hair"></div>
+        <div class="bd"><span class="num">02</span><h3 data-i="c2h">Kids treated like royalty</h3><p data-i="c2p">Patient barbers, first-cut friendly, and a family vibe that makes Saturday haircuts easy for parents.</p></div></article>
+      <article class="card"><div class="img"><img loading="lazy" src="https://images.pexels.com/photos/2014809/pexels-photo-2014809.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Barber shaving a client's beard"></div>
+        <div class="bd"><span class="num">03</span><h3 data-i="c3h">Beards &amp; line-ups</h3><p data-i="c3p">Razor-sharp edges, beard shaping and hot-towel finishes for the full Dominican-shop treatment.</p></div></article>
+    </div>
+  </div></section>
+
+  <div class="marquee" aria-hidden="true"><div class="track">
+    <span>Fades</span><span>Tapers</span><span>Line-ups</span><span>Beard work</span><span>Kids' cuts</span><span>Designs</span><span>Hot towel</span><span>Dale pa' lante</span>
+    <span>Fades</span><span>Tapers</span><span>Line-ups</span><span>Beard work</span><span>Kids' cuts</span><span>Designs</span><span>Hot towel</span><span>Dale pa' lante</span>
+  </div></div>
+
+  <section><div class="wrap">
+    <span class="eyebrow" data-i="rlE">In the chair</span>
+    <h2 data-i="rlH">Watch the work.</h2>
+    <div class="reel">
+      <figure><video autoplay muted loop playsinline preload="none" poster="https://images.pexels.com/videos/7686519/pexels-photo-7686519.jpeg?auto=compress&cs=tinysrgb&w=1000"><source src="https://videos.pexels.com/video-files/7686519/7686519-hd_1920_1080_24fps.mp4" type="video/mp4"></video><figcaption data-i="rl1">Scissor work</figcaption></figure>
+      <figure><video autoplay muted loop playsinline preload="none" poster="https://images.pexels.com/videos/5450149/pexels-photo-5450149.jpeg?auto=compress&cs=tinysrgb&w=900"><source src="https://videos.pexels.com/video-files/5450149/5450149-uhd_2560_1440_30fps.mp4" type="video/mp4"></video><figcaption data-i="rl2">Beard detail</figcaption></figure>
+      <figure><video autoplay muted loop playsinline preload="none" poster="https://images.pexels.com/videos/7697121/adult-barber-barber-shop-barbering-7697121.jpeg?auto=compress&cs=tinysrgb&w=600"><source src="https://videos.pexels.com/video-files/7697121/7697121-hd_1080_1920_30fps.mp4" type="video/mp4"></video><figcaption data-i="rl3">Clean up</figcaption></figure>
+    </div>
+  </div></section>
+
+  <section style="padding-top:0"><div class="wrap">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap">
+      <div><span class="eyebrow" data-i="tmE">The team</span><h2 data-i="tmH">Pick your barber.</h2></div>
+      <a href="#barbers" class="btn btn-ghost btn-sm" data-i="tmAll">Meet all 10 →</a>
+    </div>
+    <div class="team" id="teamPreview"></div>
+  </div></section>
+
+  <section class="band"><div class="in">
+    <div class="b1"><h2 data-i="bnH1">Walk in.</h2><p data-i="bnP1">No appointment? No problem. Pull up to 2790 Cobb Pkwy NW and grab the next open chair.</p><a href="#visit" class="btn btn-white" style="align-self:flex-start" data-i="dir">Get directions</a></div>
+    <div class="x"></div>
+    <div class="b2"><h2 data-i="bnH2">Or lock it in.</h2><p data-i="bnP2">Want your barber at your time? Send a booking request and the shop will text you back to confirm.</p><a href="#visit" data-go="book" class="btn btn-white" style="align-self:flex-start;color:var(--red)" data-i="book">Book a chair</a></div>
+  </div></section>
+</div>
+
+<!-- ================= SERVICES ================= -->
+<div class="page" id="p-services">
+  <div class="phero" style="--bg:url('https://images.pexels.com/photos/33461079/pexels-photo-33461079.jpeg?auto=compress&cs=tinysrgb&w=1600')"><div class="wrap">
+    <span class="eyebrow" data-i="svE">Services &amp; prices</span>
+    <h1 data-i="svH">The menu.</h1>
+    <p class="lede" data-i="svP">Clear prices, posted up front. Every cut includes a hot-towel neck clean-up and styling finish.</p>
+  </div></div>
+  <section><div class="wrap">
+    <div class="menu">
+      <div class="menu-col">
+        <h3 data-i="m1">Cuts</h3>
+        <div class="item"><b data-i="s1">Signature Fade</b><div class="p">$35</div><span><span data-i="s1d">Skin, low, mid or high fade with line-up</span> · <span class="dur">45 min</span></span></div>
+        <div class="item"><b data-i="s2">Classic Haircut</b><div class="p">$30</div><span><span data-i="s2d">Scissor or clipper cut, taper finish</span> · <span class="dur">40 min</span></span></div>
+        <div class="item"><b data-i="s3">Cut + Beard</b><div class="p">$45</div><span><span data-i="s3d">Any cut plus beard shape &amp; razor line</span> · <span class="dur">60 min</span></span></div>
+        <div class="item"><b data-i="s4">Kids' Cut (12 &amp; under)</b><div class="p">$25</div><span><span data-i="s4d">Patient, first-cut friendly</span> · <span class="dur">30 min</span></span></div>
+        <div class="item"><b data-i="s5">Senior Cut (65+)</b><div class="p">$22</div><span><span data-i="s5d">Classic cut, extra care</span> · <span class="dur">30 min</span></span></div>
+      </div>
+      <div class="menu-col">
+        <h3 data-i="m2">Beard, shave &amp; extras</h3>
+        <div class="item"><b data-i="s6">Line-up / Edge-up</b><div class="p">$15</div><span><span data-i="s6d">Hairline and temples cleaned sharp</span> · <span class="dur">15 min</span></span></div>
+        <div class="item"><b data-i="s7">Beard Trim &amp; Shape</b><div class="p">$20</div><span><span data-i="s7d">Trim, shape and razor detail</span> · <span class="dur">20 min</span></span></div>
+        <div class="item"><b data-i="s8">Hot Towel Shave</b><div class="p">$30</div><span><span data-i="s8d">Straight-razor shave, hot towel, aftershave</span> · <span class="dur">35 min</span></span></div>
+        <div class="item"><b data-i="s9">Hair Design</b><div class="p"><small data-i="from">from</small>+$10</div><span><span data-i="s9d">Parts, lines and freestyle designs</span> · <span class="dur">+15 min</span></span></div>
+        <div class="item"><b data-i="s10">Eyebrows / Enhancement</b><div class="p">$10</div><span><span data-i="s10d">Brow clean-up or color enhancement</span> · <span class="dur">10 min</span></span></div>
+      </div>
+    </div>
+    <div class="perks">
+      <div class="perk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><b data-i="pk1">Walk-ins welcome</b><span data-i="pk1d">Next open chair, 7 days</span></div>
+      <div class="perk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="13" rx="2"/><path d="M2 10h20M6 15h4"/></svg><b data-i="pk2">ATM on site</b><span data-i="pk2d">Cash on hand, no extra stop</span></div>
+      <div class="perk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="5" r="2"/><path d="M12 7v6l4 5M12 13l-4 5M8 10h8"/></svg><b data-i="pk3">Accessible parking</b><span data-i="pk3d">Wheelchair-accessible lot</span></div>
+      <div class="perk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.5-7-11a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 6.5-7 11-7 11z"/></svg><b data-i="pk4">Family friendly</b><span data-i="pk4d">Kids, teens, dads, abuelos</span></div>
+    </div>
+    <p class="note" data-i="priceNote">Sample pricing for this concept — final prices to be confirmed by the shop.</p>
+  </div></section>
+</div>
+
+<!-- ================= BARBERS ================= -->
+<div class="page" id="p-barbers">
+  <div class="phero" style="--bg:url('https://images.pexels.com/photos/7697230/pexels-photo-7697230.jpeg?auto=compress&cs=tinysrgb&w=1600')"><div class="wrap">
+    <span class="eyebrow" data-i="brE">Los barberos</span>
+    <h1 data-i="brH">Meet the team.</h1>
+    <p class="lede" data-i="brP">Ten chairs, ten styles. Tap a barber to see their links, follow their work, or book straight into their chair.</p>
+    <div class="chips" id="brFilter">
+      <button aria-pressed="true" data-f="all" data-i="fAll">All</button>
+      <button aria-pressed="false" data-f="fade" data-i="fFade">Fades</button>
+      <button aria-pressed="false" data-f="beard" data-i="fBeard">Beards</button>
+      <button aria-pressed="false" data-f="kids" data-i="fKids">Kids</button>
+      <button aria-pressed="false" data-f="design" data-i="fDesign">Designs</button>
+    </div>
+  </div></div>
+  <section><div class="wrap">
+    <div class="team" id="teamFull" style="margin-top:0"></div>
+    <p class="note" data-i="brNote">Profiles, handles and links are placeholders for this concept. Barbers marked "In reviews" are named by customers in Google reviews; photos and real handles get swapped in at launch.</p>
+  </div></section>
+</div>
+
+<!-- ================= GALLERY ================= -->
+<div class="page" id="p-gallery">
+  <div class="phero" style="--bg:url('https://images.pexels.com/photos/785537/pexels-photo-785537.jpeg?auto=compress&cs=tinysrgb&w=1600')"><div class="wrap">
+    <span class="eyebrow" data-i="glE">Gallery</span>
+    <h1 data-i="glH">Fresh off the chair.</h1>
+    <div class="chips" id="glFilter">
+      <button aria-pressed="true" data-f="all" data-i="fAll">All</button>
+      <button aria-pressed="false" data-f="cuts" data-i="gCuts">Cuts</button>
+      <button aria-pressed="false" data-f="beard" data-i="fBeard">Beards</button>
+      <button aria-pressed="false" data-f="kids" data-i="fKids">Kids</button>
+      <button aria-pressed="false" data-f="shop" data-i="gShop">The shop</button>
+    </div>
+  </div></div>
+  <section style="padding-top:40px"><div class="wrap">
+    <div class="masonry" id="masonry"></div>
+    <p class="note" data-i="glNote">Stock imagery for this concept — replaced with the shop's own work and Instagram feed at launch.</p>
+  </div></section>
+</div>
+
+<!-- ================= ABOUT & REVIEWS ================= -->
+<div class="page" id="p-about">
+  <div class="phero" style="--bg:url('https://images.pexels.com/photos/7697231/pexels-photo-7697231.jpeg?auto=compress&cs=tinysrgb&w=1600')"><div class="wrap">
+    <span class="eyebrow" data-i="abE">Nuestra historia</span>
+    <h1 data-i="abH">Kennesaw's Dominican shop.</h1>
+  </div></div>
+  <section><div class="wrap split">
+    <div>
+      <span class="eyebrow" data-i="ab2E">About us</span>
+      <h2 data-i="ab2H">From the island to Cobb Parkway.</h2>
+      <p class="lede" data-i="ab2P">In the Dominican Republic, the barbershop is where the neighborhood comes together — for the cut, the conversation, the bachata in the background and the dominoes after. Angel Dominican Barbershop brought that tradition to Kennesaw.</p>
+      <ul class="ticks">
+        <li data-i="t1">Serving Kennesaw from 2790 Cobb Pkwy NW</li>
+        <li data-i="t2">Hablamos español — and English</li>
+        <li data-i="t3">Walk-ins welcome seven days a week</li>
+        <li data-i="t4">Community pop-ups and local vendor days</li>
+      </ul>
+    </div>
+    <div class="ph"><img loading="lazy" src="https://images.pexels.com/photos/33418521/pexels-photo-33418521.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Barber using clippers in a classic barbershop"></div>
+  </div></section>
+
+  <section style="padding-top:0"><div class="wrap">
+    <span class="eyebrow" data-i="rvE">Reviews</span>
+    <h2 data-i="rvH">What the neighborhood says.</h2>
+    <div class="rate">
+      <div class="big">4.4</div>
+      <div>
+        <div class="stars" aria-label="4.4 out of 5 stars" id="stars"></div>
+        <b data-i="rvB">165+ reviews on Google</b>
+        <p style="color:rgba(255,255,255,.8);font-size:15px" data-i="rvP">The themes that come up again and again:</p>
+      </div>
+      <a class="btn btn-white" style="margin-left:auto" href="https://maps.google.com/?cid=10713657168316869204" target="_blank" rel="noopener" data-i="rvBtn">Read on Google</a>
+    </div>
+    <div class="themes">
+      <div class="theme"><span class="q">“</span><b data-i="th1">Ask for them by name</b><p data-i="th1p">Customers single out Armando, Johan, Lester and Leo for consistently clean, detailed work.</p></div>
+      <div class="theme"><span class="q">“</span><b data-i="th2">Great with kids</b><p data-i="th2p">Parents say their sons get patient, careful cuts — some reviewers say the kids are treated like royalty.</p></div>
+      <div class="theme"><span class="q">“</span><b data-i="th3">Bring the picture</b><p data-i="th3p">Reviewers mention showing a photo and walking out with exactly that look — fades and twists included.</p></div>
+    </div>
+    <p class="note" data-i="rvNote">Themes summarized from public Google reviews. At launch, this section can pull live reviews automatically.</p>
+  </div></section>
+</div>
+
+<!-- ================= VISIT & BOOK ================= -->
+<div class="page" id="p-visit">
+  <div class="phero" style="--bg:url('https://images.pexels.com/photos/31408460/pexels-photo-31408460.jpeg?auto=compress&cs=tinysrgb&w=1600')"><div class="wrap">
+    <span class="eyebrow" data-i="vsE">Visit &amp; book</span>
+    <h1 data-i="vsH">Pull up.</h1>
+    <p class="lede">2790 Cobb Pkwy NW, Suite A · Kennesaw, GA 30152</p>
+  </div></div>
+  <section><div class="wrap">
+    <div class="visit">
+      <div class="panel">
+        <h3 data-i="hrs">Hours</h3>
+        <ul class="hours" id="hours"></ul>
+        <div class="info">
+          <a href="tel:+13479220625"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>(347) 922-0625</a>
+          <a href="https://maps.google.com/?cid=10713657168316869204" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s7-6.3 7-12a7 7 0 1 0-14 0c0 5.7 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>2790 Cobb Pkwy NW, Suite A, Kennesaw</a>
+          <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="13" rx="2"/><path d="M2 10h20"/></svg><span data-i="payInfo">ATM on site · ask about card payment</span></div>
+        </div>
+      </div>
+      <div class="map"><iframe title="Map to Angel Dominican Barbershop" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Angel+Dominican+Barbershop,+2790+Cobb+Pkwy+NW,+Kennesaw,+GA+30152&output=embed"></iframe></div>
+    </div>
+
+    <div class="panel" id="book" style="margin-top:24px">
+      <span class="eyebrow" data-i="bkE">Book a chair</span>
+      <h2 style="font-size:clamp(36px,5vw,56px)" data-i="bkH">Request your time.</h2>
+      <p style="color:#b3c1d5" data-i="bkP">Pick your barber and a time. Your request goes to the shop by text and they'll confirm.</p>
+      <form class="book" id="bookForm">
+        <label><span data-i="fName">Name</span><input required name="name" autocomplete="name"></label>
+        <label><span data-i="fPhone">Phone</span><input required name="phone" type="tel" autocomplete="tel"></label>
+        <label><span data-i="fBarber">Barber</span><select name="barber" id="barberSel"></select></label>
+        <label><span data-i="fService">Service</span><select name="service" id="svcSel"></select></label>
+        <label><span data-i="fDate">Date</span><input required name="date" type="date" id="dateIn"></label>
+        <label><span data-i="fTime">Time</span><select name="time" id="timeSel"></select></label>
+        <label class="full"><span data-i="fNotes">Notes (optional)</span><textarea name="notes" rows="2" data-ph="fNotesPh" placeholder="Style, reference photo, kid's first cut…"></textarea></label>
+        <div class="full" style="display:flex;gap:12px;flex-wrap:wrap;align-items:center">
+          <button class="btn btn-red" type="submit" data-i="send">Send request</button>
+          <span style="font-size:13px;color:var(--muted)" data-i="bkSmall">Prefer to call? (347) 922-0625</span>
+        </div>
+      </form>
+      <div class="ok" id="ok"><b data-i="okH">Almost done — tap below to text your request.</b><p style="color:#c9d6ea;font-size:14px;margin:6px 0 12px" id="okTxt"></p><a class="btn btn-white btn-sm" id="smsLink" href="#" data-i="okBtn">Open text message</a></div>
+    </div>
+
+    <div class="faq">
+      <span class="eyebrow" style="margin-top:40px" data-i="faqE">FAQ</span>
+      <details><summary data-i="q1">Do I need an appointment?</summary><p data-i="a1">No — walk-ins are always welcome. If you want a specific barber at a specific time, send a booking request above.</p></details>
+      <details><summary data-i="q2">Do you cut kids' hair?</summary><p data-i="a2">Absolutely. Our barbers are patient with little ones, and first haircuts are a specialty.</p></details>
+      <details><summary data-i="q3">How do I pay?</summary><p data-i="a3">There's an ATM right inside the shop. Ask your barber about card and app payments.</p></details>
+      <details><summary data-i="q4">¿Hablan español?</summary><p data-i="a4">¡Claro que sí! Our team speaks Spanish and English.</p></details>
+      <details><summary data-i="q5">Is the shop accessible?</summary><p data-i="a5">Yes — there's wheelchair-accessible parking and a restroom on site.</p></details>
+    </div>
+  </div></section>
+</div>
+</main>
+
+<footer><div class="wrap">
+  <div class="fgrid">
+    <div>
+      <div class="brand"><svg width="40" height="40" viewBox="0 0 44 44" aria-hidden="true"><rect width="20" height="20" rx="3" fill="#002D62"/><rect x="24" width="20" height="20" rx="3" fill="#CE1126"/><rect y="24" width="20" height="20" rx="3" fill="#CE1126"/><rect x="24" y="24" width="20" height="20" rx="3" fill="#002D62"/><circle cx="22" cy="22" r="9" fill="#fff"/><text x="22" y="26.5" text-anchor="middle" font-family="Anton,Impact,sans-serif" font-size="13" fill="#002D62">A</text></svg><span class="brand-txt"><b>ANGEL DOMINICAN</b><small>Barbershop · Kennesaw</small></span></div>
+      <p style="color:var(--muted);font-size:14px;margin-top:14px;max-width:300px" data-i="ftP">Dominican barbering on Cobb Parkway. Fades, beards, kids and family — since day one.</p>
+      <div class="socials">
+        <a href="#" class="fake" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+        <a href="https://www.facebook.com/p/Angel-Dominican-Barbershop-100063739025743/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H7v4h3v8h4v-8h3l1-4h-4V8z"/></svg></a>
+        <a href="#" class="fake" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 3c.4 2.3 1.9 3.8 4 4v3.2a7.3 7.3 0 0 1-4-1.2V15a6 6 0 1 1-6-6v3.3a2.8 2.8 0 1 0 2.8 2.8V3H16z"/></svg></a>
+      </div>
+    </div>
+    <div><h4 data-i="ftV">Visit</h4><ul><li>2790 Cobb Pkwy NW, Ste A</li><li>Kennesaw, GA 30152</li><li><a href="tel:+13479220625">(347) 922-0625</a></li></ul></div>
+    <div><h4 data-i="hrs">Hours</h4><ul><li data-i="ftH1">Mon–Sat · 10am–8pm</li><li data-i="ftH2">Sun · 10am–4pm</li></ul></div>
+    <div><h4 data-i="ftE">Explore</h4><ul><li><a href="#services" data-i="nav_services">Services</a></li><li><a href="#barbers" data-i="nav_barbers">Barbers</a></li><li><a href="#gallery" data-i="nav_gallery">Gallery</a></li><li><a href="#visit" data-i="nav_visit">Visit &amp; Book</a></li></ul></div>
+  </div>
+  <div class="legal"><span>© 2026 Angel Dominican Barbershop</span><span data-i="credit">Website concept by Verde Vortex Marketing Group · stock media via Pexels</span></div>
+</div></footer>
+
+<div class="mbar"><a href="tel:+13479220625" style="background:#fff;color:var(--blue)" data-i="callS">Call</a><a href="#visit" data-go="book" style="background:var(--red)" data-i="book">Book a chair</a></div>
+
+<!-- lightbox -->
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Photo viewer"><button class="x" aria-label="Close">×</button><button class="nv pv" aria-label="Previous">‹</button><img alt=""><button class="nv nx" aria-label="Next">›</button></div>
+<!-- linktree modal -->
+<div class="modal" id="ltModal" role="dialog" aria-modal="true" aria-label="Barber links"><div class="lt-card" id="ltCard"></div></div>
+<div class="toast" id="toast"></div>
+
+<script>
+/* ---------- data ---------- */
+const BARBERS = [
+  {n:"Angel",   r:{en:"Shop founder · Classic & fades", es:"Fundador · Clásicos y fades"}, ig:"angel.dominicanbarber", tags:["fade","kids"], c:"#0a3d7a"},
+  {n:"Armando", r:{en:"Fade specialist", es:"Especialista en fades"}, ig:"armando.cutz_ga", tags:["fade","design"], c:"#8d0d1c", rev:true},
+  {n:"Johan",   r:{en:"Tapers · Line-ups", es:"Tapers · Line-ups"}, ig:"johan.thebarber", tags:["fade","beard"], c:"#00224a", rev:true},
+  {n:"Lester",  r:{en:"Twists · Textured hair", es:"Twists · Cabello rizo"}, ig:"lester.blendz", tags:["fade","design"], c:"#a3111f", rev:true},
+  {n:"Leo",     r:{en:"Kids' cuts · First haircuts", es:"Niños · Primer corte"}, ig:"leo.fadesatl", tags:["kids","fade"], c:"#0b3570", rev:true},
+  {n:"Yeuris",  r:{en:"Beards · Hot towel shaves", es:"Barbas · Afeitado con toalla"}, ig:"yeuris.razor", tags:["beard"], c:"#6f0b17"},
+  {n:"Wander",  r:{en:"Freestyle designs", es:"Diseños freestyle"}, ig:"wander.designs", tags:["design","fade"], c:"#00306a"},
+  {n:"Rafy",    r:{en:"Burst fades · Mullets", es:"Burst fades · Mullets"}, ig:"rafy.cutsupreme", tags:["fade"], c:"#b0182a"},
+  {n:"Kelvin",  r:{en:"Beard sculpting", es:"Esculpido de barba"}, ig:"kelvin.beardking", tags:["beard","fade"], c:"#082a5c"},
+  {n:"Junior",  r:{en:"Classic cuts · Seniors & kids", es:"Clásicos · Mayores y niños"}, ig:"junior.clasico", tags:["kids","beard"], c:"#7c0e1a"}
+];
+const SERVICES = [["s1","Signature Fade","$35"],["s2","Classic Haircut","$30"],["s3","Cut + Beard","$45"],["s4","Kids' Cut","$25"],["s5","Senior Cut","$22"],["s6","Line-up / Edge-up","$15"],["s7","Beard Trim & Shape","$20"],["s8","Hot Towel Shave","$30"]];
+const P = id => `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=900`;
+const GALLERY = [
+  [35157699,"cuts","Low fade, sharp line-up"],[7447146,"cuts","Clipper work"],[2014809,"beard","Straight-razor detail"],
+  [7697354,"kids","Kids' cut"],[785537,"shop","The shop at night"],[7447150,"cuts","Textured top, scissor trim"],
+  [22610337,"beard","Hot towel & beard cream"],[897263,"cuts","Taper finish"],[4969864,"shop","Products & tools"],
+  [33461079,"cuts","Clipper-over-comb"],[7697714,"shop","Caped up and ready"],[11169551,"cuts","Style & finish"],
+  [7697320,"shop","In the chair"],[6487888,"cuts","Scissor detail"],[30807432,"shop","The tools"],[33418521,"cuts","Classic clipper cut"],
+  [7697231,"shop","Waiting area vibes"],[16997937,"cuts","Old-school precision"]
+];
+const HOURS = [ // 0=Sun
+  {d:{en:"Sunday",es:"Domingo"},o:10,c:16},{d:{en:"Monday",es:"Lunes"},o:10,c:20},{d:{en:"Tuesday",es:"Martes"},o:10,c:20},
+  {d:{en:"Wednesday",es:"Miércoles"},o:10,c:20},{d:{en:"Thursday",es:"Jueves"},o:10,c:20},{d:{en:"Friday",es:"Viernes"},o:10,c:20},{d:{en:"Saturday",es:"Sábado"},o:10,c:20}
+];
+
+/* ---------- i18n (key Spanish strings) ---------- */
+const ES = {
+  strip1:"Sin cita, bienvenidos",strip2:"Cajero ATM en la barbería",nav_home:"Inicio",nav_services:"Servicios",nav_barbers:"Barberos",nav_gallery:"Galería",nav_about:"Nosotros y reseñas",nav_visit:"Visítanos",
+  book:"Reserva tu silla",call:"Llama a la barbería",callS:"Llamar",h1a:"Cortes frescos.",h1b:"Manos dominicanas.",
+  heroP:"Fades limpios, line-ups perfectos y barbas al estilo dominicano — en la Cobb Parkway de Kennesaw. Trae la foto. Nosotros la hacemos realidad.",
+  st1:"Calificación en Google",st2:"Reseñas en Google",st3:"Barberos",st4:"Días a la semana",
+  exE:"La experiencia",exH:"Más que un corte.",exS:"Es familia.",exP:"La barbería dominicana es la sala del barrio — la música sonando, la conversación corriendo y un barbero que se toma su tiempo para dejarte bien.",
+  c1h:"Fades de precisión",c1p:"Skin, low, mid, high, burst — degradados limpios y bien difuminados. Enséñanos la foto y lo igualamos.",
+  c2h:"Los niños, como reyes",c2p:"Barberos pacientes, ideales para el primer corte, y un ambiente familiar que le facilita el sábado a los padres.",
+  c3h:"Barbas y line-ups",c3p:"Bordes perfectos, barba bien formada y toalla caliente para el tratamiento dominicano completo.",
+  rlE:"En la silla",rlH:"Mira el trabajo.",rl1:"Tijera",rl2:"Detalle de barba",rl3:"Retoque",
+  tmE:"El equipo",tmH:"Escoge tu barbero.",tmAll:"Conoce a los 10 →",
+  bnH1:"Llega sin cita.",bnP1:"¿Sin cita? No hay problema. Llega al 2790 Cobb Pkwy NW y toma la próxima silla libre.",dir:"Cómo llegar",
+  bnH2:"O asegura tu turno.",bnP2:"¿Quieres a tu barbero a tu hora? Envía tu solicitud y la barbería te confirma por texto.",
+  svE:"Servicios y precios",svH:"El menú.",svP:"Precios claros, a la vista. Cada corte incluye limpieza de cuello con toalla caliente y peinado final.",
+  m1:"Cortes",m2:"Barba, afeitado y extras",s1:"Fade de la casa",s1d:"Fade skin, low, mid o high con line-up",s2:"Corte clásico",s2d:"Corte a tijera o máquina, terminado en taper",
+  s3:"Corte + barba",s3d:"Cualquier corte más forma de barba y navaja",s4:"Corte de niño (12 y menos)",s4d:"Con paciencia, ideal para el primer corte",
+  s5:"Corte senior (65+)",s5d:"Corte clásico, con cuidado extra",s6:"Line-up / Contorno",s6d:"Línea y patillas bien definidas",s7:"Recorte y forma de barba",s7d:"Recorte, forma y detalle con navaja",
+  s8:"Afeitado con toalla caliente",s8d:"Navaja, toalla caliente y loción",s9:"Diseño en el pelo",s9d:"Rayas, líneas y diseños libres",s10:"Cejas / Realce",s10d:"Limpieza de cejas o realce de color",from:"desde",
+  pk1:"Sin cita",pk1d:"La próxima silla, 7 días",pk2:"Cajero ATM",pk2d:"Efectivo sin salir",pk3:"Parqueo accesible",pk3d:"Accesible para sillas de ruedas",pk4:"Para toda la familia",pk4d:"Niños, jóvenes, papás y abuelos",
+  priceNote:"Precios de ejemplo para este concepto — la barbería confirmará los precios finales.",
+  brE:"Los barberos",brH:"Conoce al equipo.",brP:"Diez sillas, diez estilos. Toca un barbero para ver sus enlaces, seguir su trabajo o reservar directo con él.",
+  fAll:"Todos",fFade:"Fades",fBeard:"Barbas",fKids:"Niños",fDesign:"Diseños",gCuts:"Cortes",gShop:"La barbería",
+  brNote:"Perfiles, usuarios y enlaces son de ejemplo para este concepto. Los marcados \"En reseñas\" son nombrados por clientes en Google; las fotos y cuentas reales se agregan al lanzar.",
+  glE:"Galería",glH:"Recién salidos de la silla.",glNote:"Imágenes de stock para este concepto — se reemplazan con el trabajo real y el Instagram de la barbería.",
+  abE:"Nuestra historia",abH:"La barbería dominicana de Kennesaw.",ab2E:"Quiénes somos",ab2H:"De la isla a la Cobb Parkway.",
+  ab2P:"En la República Dominicana, la barbería es donde se reúne el barrio — por el corte, la conversación, la bachata de fondo y el dominó después. Angel Dominican Barbershop trajo esa tradición a Kennesaw.",
+  t1:"Sirviendo a Kennesaw desde el 2790 Cobb Pkwy NW",t2:"Hablamos español — y inglés",t3:"Sin cita, los siete días",t4:"Pop-ups comunitarios y días de vendedores locales",
+  rvE:"Reseñas",rvH:"Lo que dice el barrio.",rvB:"Más de 165 reseñas en Google",rvP:"Los temas que más se repiten:",rvBtn:"Leer en Google",
+  th1:"Pídelos por nombre",th1p:"Los clientes destacan a Armando, Johan, Lester y Leo por un trabajo limpio y detallado.",
+  th2:"Excelentes con los niños",th2p:"Los padres dicen que sus hijos reciben cortes con paciencia — algunos dicen que los tratan como reyes.",
+  th3:"Trae la foto",th3p:"Varios cuentan que enseñaron una foto y salieron con ese mismo look — fades y twists incluidos.",
+  rvNote:"Temas resumidos de reseñas públicas en Google. Al lanzar, esta sección puede mostrar reseñas en vivo.",
+  vsE:"Visítanos y reserva",vsH:"Llégale.",hrs:"Horario",payInfo:"Cajero ATM en la barbería · pregunta por pago con tarjeta",
+  bkE:"Reserva tu silla",bkH:"Pide tu turno.",bkP:"Escoge tu barbero y la hora. Tu solicitud llega a la barbería por texto y te confirman.",
+  fName:"Nombre",fPhone:"Teléfono",fBarber:"Barbero",fService:"Servicio",fDate:"Fecha",fTime:"Hora",fNotes:"Notas (opcional)",fNotesPh:"Estilo, foto de referencia, primer corte del niño…",
+  send:"Enviar solicitud",bkSmall:"¿Prefieres llamar? (347) 922-0625",okH:"Casi listo — toca abajo para enviar tu solicitud por texto.",okBtn:"Abrir mensaje de texto",
+  faqE:"Preguntas",q1:"¿Necesito cita?",a1:"No — siempre puedes llegar sin cita. Si quieres un barbero específico a una hora específica, envía tu solicitud arriba.",
+  q2:"¿Cortan a niños?",a2:"¡Claro! Nuestros barberos tienen paciencia con los pequeños, y el primer corte es una especialidad.",
+  q3:"¿Cómo pago?",a3:"Hay un cajero ATM dentro de la barbería. Pregúntale a tu barbero por tarjeta y apps de pago.",
+  q4:"¿Hablan español?",a4:"¡Claro que sí! Nuestro equipo habla español e inglés.",q5:"¿La barbería es accesible?",a5:"Sí — hay parqueo accesible para sillas de ruedas y baño.",
+  ftP:"Barbería dominicana en la Cobb Parkway. Fades, barbas, niños y familia — desde el primer día.",ftV:"Visítanos",ftH1:"Lun–Sáb · 10am–8pm",ftH2:"Dom · 10am–4pm",ftE:"Explora",
+  credit:"Concepto de sitio web por Verde Vortex Marketing Group · media de stock vía Pexels"
+};
+let lang = "en";
+const EN = {};
+document.querySelectorAll("[data-i]").forEach(el => { if(!(el.dataset.i in EN)) EN[el.dataset.i] = el.innerHTML; });
+document.querySelectorAll("[data-ph]").forEach(el => EN[el.dataset.ph] = el.placeholder);
+const t = k => (lang==="es" && ES[k]) || EN[k] || k;
+function applyLang(){
+  document.documentElement.lang = lang;
+  document.querySelectorAll("[data-i]").forEach(el => { const v = lang==="es" ? ES[el.dataset.i] : EN[el.dataset.i]; if(v) el.innerHTML = v; });
+  document.querySelectorAll("[data-ph]").forEach(el => el.placeholder = t(el.dataset.ph));
+  document.querySelectorAll(".lang button").forEach(b => b.setAttribute("aria-pressed", b.dataset.lang===lang));
+  renderTeams(); renderHours(); fillForm(true);
+}
+document.querySelectorAll(".lang button").forEach(b => b.onclick = () => { lang = b.dataset.lang; applyLang(); });
+
+/* ---------- icons ---------- */
+const IC = {
+  ig:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>',
+  tt:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 3c.4 2.3 1.9 3.8 4 4v3.2a7.3 7.3 0 0 1-4-1.2V15a6 6 0 1 1-6-6v3.3a2.8 2.8 0 1 0 2.8 2.8V3H16z"/></svg>',
+  cal:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>',
+  cash:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/></svg>',
+  yt:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 8.2a3 3 0 0 0-2.1-2.1C18 5.6 12 5.6 12 5.6s-6 0-7.9.5A3 3 0 0 0 2 8.2 31 31 0 0 0 1.6 12 31 31 0 0 0 2 15.8a3 3 0 0 0 2.1 2.1c1.9.5 7.9.5 7.9.5s6 0 7.9-.5a3 3 0 0 0 2.1-2.1c.3-1.2.4-2.5.4-3.8s-.1-2.6-.4-3.8zM10 15V9l5.2 3L10 15z"/></svg>',
+  pin:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s7-6.3 7-12a7 7 0 1 0-14 0c0 5.7 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>',
+  sc:'<svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.4"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.1 15.9M14.5 14.5 20 20M8.1 8.1 12 12"/></svg>',
+  sil:'<svg viewBox="0 0 80 60" fill="white"><circle cx="40" cy="20" r="14"/><path d="M8 60c2-16 16-24 32-24s30 8 32 24z"/></svg>',
+  star:'<svg viewBox="0 0 24 24"><path fill="#fff" d="M12 2l3 6.9 7.5.6-5.7 4.9 1.8 7.3L12 17.8 5.4 21.7l1.8-7.3L1.5 9.5 9 8.9z"/></svg>'
+};
+const avatar = (b, big) => `<div class="avatar"${big?' style="width:110px;height:110px"':''}><div class="face" style="background:radial-gradient(circle at 30% 25%, ${b.c}, #000c1f 85%)">${IC.sil}<b>${b.n[0]}</b></div><span class="chip">${IC.sc}</span></div>`;
+
+/* ---------- teams ---------- */
+let brF = "all";
+function card(b,i){
+  return `<article class="barber" data-tags="${b.tags.join(" ")}">
+    ${b.rev?`<span class="tag-rev">${lang==="es"?"En reseñas":"In reviews"}</span>`:""}
+    ${avatar(b)}
+    <h3>${b.n}</h3><div class="role">${b.r[lang]}</div>
+    <a class="ig fake" href="#">${IC.ig}@${b.ig}</a>
+    <div class="acts"><button class="lt" data-lt="${i}">${lang==="es"?"Enlaces":"Links"}</button><button class="bk" data-bk="${i}">${lang==="es"?"Reservar":"Book"}</button></div>
+  </article>`;
+}
+function renderTeams(){
+  document.getElementById("teamPreview").innerHTML = BARBERS.slice(0,5).map(card).join("");
+  document.getElementById("teamFull").innerHTML = BARBERS.map((b,i)=>card(b,i)).filter((_,i)=> brF==="all" || BARBERS[i].tags.includes(brF)).join("");
+  // fix preview indices (slice keeps 0..4) ok
+}
+document.getElementById("brFilter").onclick = e => {
+  const b = e.target.closest("button"); if(!b) return;
+  brF = b.dataset.f; document.querySelectorAll("#brFilter button").forEach(x=>x.setAttribute("aria-pressed", x===b)); renderTeams();
+};
+
+/* ---------- linktree modal ---------- */
+const modal = document.getElementById("ltModal"), ltCard = document.getElementById("ltCard");
+function openLT(i){
+  const b = BARBERS[i], es = lang==="es";
+  ltCard.innerHTML = `<button class="x" aria-label="Close">×</button>
+   <div class="top">${avatar(b,true)}<h3>${b.n}</h3><p>@${b.ig} · Angel Dominican Barbershop</p><p style="margin-top:4px;color:#fff">${b.r[lang]}</p></div>
+   <ul>
+     <li><a href="#" class="red" data-bk="${i}">${IC.cal}${es?"Reserva con "+b.n:"Book with "+b.n}</a></li>
+     <li><a href="#" class="fake">${IC.ig}Instagram · @${b.ig}</a></li>
+     <li><a href="#" class="fake">${IC.tt}TikTok · @${b.ig}</a></li>
+     <li><a href="#" class="fake">${IC.yt}${es?"Videos de cortes":"Cut breakdowns on YouTube"}</a></li>
+     <li><a href="#" class="fake">${IC.cash}${es?"Propina por Cash App / Zelle":"Tip via Cash App / Zelle"}</a></li>
+     <li><a href="https://maps.google.com/?cid=10713657168316869204" target="_blank" rel="noopener">${IC.pin}${es?"Cómo llegar a la barbería":"Directions to the shop"}</a></li>
+   </ul>
+   <div class="foot">${es?"Enlaces de ejemplo para el concepto":"Sample link-in-bio for this concept"}</div>`;
+  modal.classList.add("on"); ltCard.querySelector(".x").focus();
+}
+modal.onclick = e => { if(e.target===modal || e.target.closest(".x")) modal.classList.remove("on"); };
+
+/* ---------- toast for placeholder links ---------- */
+const toast = document.getElementById("toast"); let tt;
+function say(m){ toast.textContent=m; toast.classList.add("on"); clearTimeout(tt); tt=setTimeout(()=>toast.classList.remove("on"),2200); }
+
+/* ---------- global click handling ---------- */
+document.addEventListener("click", e => {
+  const lt = e.target.closest("[data-lt]"); if(lt){ e.preventDefault(); openLT(+lt.dataset.lt); return; }
+  const bk = e.target.closest("[data-bk]"); if(bk){ e.preventDefault(); modal.classList.remove("on"); goBook(BARBERS[+bk.dataset.bk].n); return; }
+  const fk = e.target.closest(".fake"); if(fk){ e.preventDefault(); say(lang==="es"?"Enlace de ejemplo — se conecta al lanzar":"Sample link — goes live at launch"); return; }
+  const go = e.target.closest("[data-go=book]"); if(go){ e.preventDefault(); goBook(); }
+});
+function goBook(name){
+  if(location.hash!=="#visit") location.hash="#visit";
+  setTimeout(()=>{ if(name) document.getElementById("barberSel").value=name; document.getElementById("book").scrollIntoView({behavior:"smooth",block:"start"}); }, 60);
+}
+
+/* ---------- gallery ---------- */
+const mas = document.getElementById("masonry");
+mas.innerHTML = GALLERY.map((g,i)=>`<figure data-c="${g[1]}" data-k="${i}"><img loading="lazy" src="${P(g[0])}" alt="${g[2]}"><figcaption>${g[2]}</figcaption></figure>`).join("");
+document.getElementById("glFilter").onclick = e => {
+  const b = e.target.closest("button"); if(!b) return;
+  document.querySelectorAll("#glFilter button").forEach(x=>x.setAttribute("aria-pressed", x===b));
+  mas.querySelectorAll("figure").forEach(f=>f.classList.toggle("hide", b.dataset.f!=="all" && f.dataset.c!==b.dataset.f));
+};
+const lb = document.getElementById("lb"), lbImg = lb.querySelector("img"); let li = 0;
+const vis = () => [...mas.querySelectorAll("figure:not(.hide)")];
+function show(k){ const v=vis(); li=(k+v.length)%v.length; const g=GALLERY[+v[li].dataset.k]; lbImg.src=P(g[0]).replace("w=900","w=1800"); lbImg.alt=g[2]; }
+mas.onclick = e => { const f=e.target.closest("figure"); if(!f) return; lb.classList.add("on"); show(vis().indexOf(f)); };
+lb.onclick = e => { if(e.target.closest(".nx")) show(li+1); else if(e.target.closest(".pv")) show(li-1); else if(e.target!==lbImg) lb.classList.remove("on"); };
+document.addEventListener("keydown", e => {
+  if(e.key==="Escape"){ lb.classList.remove("on"); modal.classList.remove("on"); }
+  if(lb.classList.contains("on")){ if(e.key==="ArrowRight") show(li+1); if(e.key==="ArrowLeft") show(li-1); }
+});
+
+/* ---------- stars ---------- */
+document.getElementById("stars").innerHTML = IC.star.repeat(4) + IC.star.replace('fill="#fff"','fill="rgba(255,255,255,.45)"');
+
+/* ---------- hours + open now (Eastern time) ---------- */
+function nowET(){
+  const p = new Intl.DateTimeFormat("en-US",{timeZone:"America/New_York",weekday:"short",hour:"numeric",minute:"numeric",hour12:false}).formatToParts(new Date());
+  const g = k => p.find(x=>x.type===k).value;
+  return {d:["Sun","Mon","Tue","Wed","Thu","Fri","Sat"].indexOf(g("weekday")), h:(+g("hour"))%24 + (+g("minute"))/60};
+}
+const fmt = h => { const s = h>=12?"pm":"am"; return ((h+11)%12+1)+s; };
+function renderHours(){
+  const n = nowET();
+  const order=[1,2,3,4,5,6,0];
+  document.getElementById("hours").innerHTML = order.map(d=>`<li class="${d===n.d?"today":""}"><span>${HOURS[d].d[lang]}</span><span>${fmt(HOURS[d].o)} – ${fmt(HOURS[d].c)}</span></li>`).join("");
+  const td = HOURS[n.d], open = n.h>=td.o && n.h<td.c, pill = document.getElementById("openPill");
+  pill.classList.toggle("closed", !open);
+  document.getElementById("openTxt").textContent = open
+    ? (lang==="es"?`Abierto ahora · hasta las ${fmt(td.c)}`:`Open now · until ${fmt(td.c)}`)
+    : (lang==="es"?"Cerrado ahora · abrimos a las 10am":"Closed now · opens at 10am");
+}
+
+/* ---------- booking form ---------- */
+const bSel=document.getElementById("barberSel"), sSel=document.getElementById("svcSel"), tSel=document.getElementById("timeSel"), dIn=document.getElementById("dateIn");
+function fillForm(keep){
+  const bv=bSel.value, sv=sSel.value;
+  bSel.innerHTML = `<option value="Any">${lang==="es"?"Cualquiera disponible":"First available"}</option>` + BARBERS.map(b=>`<option>${b.n}</option>`).join("");
+  sSel.innerHTML = SERVICES.map(s=>`<option value="${s[1]}">${t(s[0]).replace(/&amp;/g,"&")} · ${s[2]}</option>`).join("");
+  if(keep){ if(bv) bSel.value=bv; if(sv) sSel.value=sv; }
+  fillTimes();
+}
+function fillTimes(){
+  const tv=tSel.value; let d = dIn.value ? new Date(dIn.value+"T12:00").getDay() : 1;
+  const h=HOURS[d], opts=[];
+  for(let x=h.o; x<h.c-0.4; x+=0.5){ const hh=Math.floor(x), mm=x%1?"30":"00"; opts.push(`${((hh+11)%12+1)}:${mm} ${hh>=12?"PM":"AM"}`); }
+  tSel.innerHTML = opts.map(o=>`<option>${o}</option>`).join(""); if(opts.includes(tv)) tSel.value=tv;
+}
+(function(){ const d=new Date(); const iso=d.toLocaleDateString("en-CA",{timeZone:"America/New_York"}); dIn.min=iso; dIn.value=iso; })();
+dIn.onchange = fillTimes;
+document.getElementById("bookForm").onsubmit = e => {
+  e.preventDefault(); const f = new FormData(e.target);
+  const msg = `Hi! Booking request: ${f.get("name")} (${f.get("phone")}) — ${f.get("service")} with ${f.get("barber")} on ${f.get("date")} at ${f.get("time")}.${f.get("notes")?" Notes: "+f.get("notes"):""}`;
+  document.getElementById("okTxt").textContent = msg;
+  document.getElementById("smsLink").href = "sms:+13479220625?&body="+encodeURIComponent(msg);
+  document.getElementById("ok").classList.add("on");
+};
+
+/* ---------- router ---------- */
+const PAGES=["home","services","barbers","gallery","about","visit"];
+function route(){
+  let h = location.hash.replace("#","") || "home"; if(!PAGES.includes(h)) h="home";
+  PAGES.forEach(p=>document.getElementById("p-"+p).classList.toggle("on", p===h));
+  document.querySelectorAll(".links a").forEach(a=>a.classList.toggle("active", a.getAttribute("href")==="#"+h));
+  document.getElementById("hdr").classList.remove("open"); document.getElementById("burger").setAttribute("aria-expanded","false");
+  window.scrollTo({top:0});
+  document.querySelectorAll(".page.on video").forEach(v=>{ v.play().catch(()=>{}); });
+}
+addEventListener("hashchange", route);
+document.getElementById("burger").onclick = function(){ const h=document.getElementById("hdr"); h.classList.toggle("open"); this.setAttribute("aria-expanded", h.classList.contains("open")); };
+
+renderTeams(); renderHours(); fillForm(); route();
+setInterval(renderHours, 60000);
+</script>
+</body>
+</html>
