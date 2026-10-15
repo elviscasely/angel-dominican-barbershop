@@ -5,10 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Angel Dominican Barbershop · Kennesaw, GA</title>
 <meta name="description" content="Dominican barbershop in Kennesaw, GA. Fades, tapers, beard work and kids' cuts. Walk-ins welcome. 2790 Cobb Pkwy NW.">
-<link rel="icon" href="media/favicon.jpg">
+<link rel="icon" href="media/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=DM+Serif+Display:ital@1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Yellowtail&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=DM+Serif+Display:ital@1&display=swap" rel="stylesheet">
 <style>
 :root{
   --blue:#002D62; --blue-2:#0a3d7a; --blue-deep:#001634; --ink:#000c1f;
@@ -322,8 +322,6 @@ footer a:hover{color:#fff}
   .brand-txt b{font-size:18px}
 }
 
-.logo-badge{flex:none;width:48px;height:48px;border-radius:12px;background:#fff;display:grid;place-items:center;overflow:hidden;box-shadow:0 0 0 2px rgba(255,255,255,.15)}
-.logo-badge img{width:100%;height:100%;object-fit:contain}
 .hero .bgv{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:blur(28px) brightness(.55) saturate(1.2);transform:scale(1.15)}
 .hero .phone{position:absolute;right:max(20px,calc((100vw - 1200px)/2 + 20px));bottom:56px;z-index:2;width:300px;aspect-ratio:9/16;border-radius:30px;overflow:hidden;border:6px solid #fff;box-shadow:0 30px 80px rgba(0,0,0,.6),0 0 0 2px var(--red)}
 .hero .phone video{position:static;width:100%;height:100%;object-fit:cover}
@@ -341,10 +339,32 @@ footer a:hover{color:#fff}
 .award{display:inline-flex;align-items:center;gap:10px;margin-top:22px;padding:10px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.05);font-weight:700;font-size:14px}
 .award i{font-style:normal;color:#f5c542}
 @media (max-width:1060px){.hero .phone{display:none}.hero .wrap{padding-right:20px}.hero .bgv{filter:brightness(.6);transform:none}}
-@media (max-width:560px){.logo-badge{width:42px;height:42px}.reel figure{width:200px}.reel figure.wide{width:300px}}
+@media (max-width:560px){.reel figure{width:200px}.reel figure.wide{width:300px}}
+
+.logo-icon{width:26px;height:50px;flex:none;filter:drop-shadow(0 2px 6px rgba(0,0,0,.5))}
+.logo-word{display:flex;flex-direction:column;line-height:.9;min-width:0}
+.lw-angel{font-family:'Yellowtail',cursive;font-size:24px;color:#fff;-webkit-text-stroke:0;text-shadow:2px 2px 0 var(--blue-2),-1px -1px 0 var(--blue-2),1px -1px 0 var(--blue-2),-1px 1px 0 var(--blue-2);margin-bottom:1px;transform:rotate(-4deg);transform-origin:left;width:max-content}
+.lw-dom{font-family:var(--display);font-size:20px;letter-spacing:.06em;color:var(--red-2)}
+.lw-shop{font-family:var(--display);font-size:10.5px;letter-spacing:.36em;color:#fff;margin-top:3px}
+.logo-full{width:100%;height:auto;display:block;overflow:visible}
+.foot-logo{display:block;width:220px}
+.about-logo{width:240px;margin-bottom:22px}
+.pole-spin,.pole-spin-lg{animation:pole 3.2s linear infinite}
+.pole-spin-lg{animation-duration:4s}
+@keyframes pole{from{transform:translateY(0)}to{transform:translateY(48.7px)}}
+.pole-spin{animation-name:poleS}@keyframes poleS{from{transform:translateY(0)}to{transform:translateY(20.45px)}}
 </style>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+  <pattern id="adbStripes" patternUnits="userSpaceOnUse" width="30" height="30" patternTransform="rotate(-38)">
+    <rect width="30" height="30" fill="#ffffff"/><rect width="10" height="30" fill="#CE1126"/><rect x="15" width="10" height="30" fill="#0a3d9a"/>
+  </pattern>
+  <linearGradient id="adbShade" x1="0" x2="1"><stop offset="0" stop-color="#000" stop-opacity=".35"/><stop offset=".35" stop-color="#fff" stop-opacity=".18"/><stop offset=".6" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".45"/></linearGradient>
+  <linearGradient id="adbCap" x1="0" x2="1"><stop offset="0" stop-color="#2a3550"/><stop offset=".4" stop-color="#5a6684"/><stop offset="1" stop-color="#141b2e"/></linearGradient>
+  <clipPath id="adbPoleClip"><rect x="160" y="70" width="80" height="176" rx="4"/></clipPath>
+  <clipPath id="adbIconClip"><rect x="8" y="13" width="16" height="34" rx="2"/></clipPath>
+</defs></svg>
 
 <!-- top strip -->
 <div class="strip"><div class="wrap">
@@ -356,8 +376,14 @@ footer a:hover{color:#fff}
 <header id="hdr">
   <div class="wrap nav">
     <a href="#home" class="brand" aria-label="Angel Dominican Barbershop home">
-      <span class="logo-badge"><img src="media/logo.jpg" alt="Angel Dominican Barber Shop logo"></span>
-      <span class="brand-txt"><b>ANGEL DOMINICAN</b><small>Barbershop · Kennesaw</small></span>
+      <svg class="logo-icon" viewBox="0 0 32 62" aria-hidden="true">
+        <ellipse cx="16" cy="9" rx="11" ry="8" fill="url(#adbCap)" stroke="#fff" stroke-width="1.5"/>
+        <rect x="5" y="10" width="22" height="4" rx="1.5" fill="#fff"/>
+        <g clip-path="url(#adbIconClip)"><g class="pole-spin"><rect x="0" y="-60" width="80" height="210" fill="url(#adbStripes)" transform="scale(.42)"/></g><rect x="8" y="13" width="16" height="34" fill="url(#adbShade)"/></g>
+        <rect x="5" y="46" width="22" height="4" rx="1.5" fill="#fff"/>
+        <ellipse cx="16" cy="53" rx="11" ry="7" fill="url(#adbCap)" stroke="#fff" stroke-width="1.5"/>
+      </svg>
+      <span class="logo-word"><span class="lw-angel">Angel</span><span class="lw-dom">DOMINICAN</span><span class="lw-shop">BARBER SHOP</span></span>
     </a>
     <nav class="links" aria-label="Main">
       <a href="#home" data-i="nav_home">Home</a>
@@ -538,6 +564,22 @@ footer a:hover{color:#fff}
   </div></div>
   <section><div class="wrap split">
     <div>
+      <div class="about-logo"><svg class="logo-full" style="max-width:300px" viewBox="0 0 400 330" role="img" aria-label="Angel Dominican Barber Shop">
+  <ellipse cx="200" cy="44" rx="56" ry="40" fill="url(#adbCap)" stroke="#fff" stroke-width="4"/>
+  <rect x="146" y="56" width="108" height="16" rx="5" fill="#fff"/>
+  <g clip-path="url(#adbPoleClip)"><g class="pole-spin-lg"><rect x="140" y="0" width="140" height="330" fill="url(#adbStripes)"/></g><rect x="160" y="70" width="80" height="176" fill="url(#adbShade)"/></g>
+  <rect x="146" y="244" width="108" height="16" rx="5" fill="#fff"/>
+  <ellipse cx="200" cy="282" rx="56" ry="34" fill="url(#adbCap)" stroke="#fff" stroke-width="4"/>
+  <g fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity=".9">
+    <circle cx="96" cy="262" r="11"/><circle cx="118" cy="282" r="11"/><path d="M104 254 L150 214 M110 274 L150 236"/>
+    <circle cx="304" cy="262" r="11"/><circle cx="282" cy="282" r="11"/><path d="M296 254 L250 214 M290 274 L250 236"/>
+  </g>
+  <g transform="rotate(-24 312 64)" fill="#fff"><rect x="280" y="24" width="64" height="16" rx="4"/><g><rect x="283" y="40" width="3" height="34" rx="1.5"/><rect x="289" y="40" width="3" height="34" rx="1.5"/><rect x="295" y="40" width="3" height="34" rx="1.5"/><rect x="301" y="40" width="3" height="34" rx="1.5"/><rect x="307" y="40" width="3" height="34" rx="1.5"/><rect x="313" y="40" width="3" height="34" rx="1.5"/><rect x="319" y="40" width="3" height="34" rx="1.5"/><rect x="325" y="40" width="3" height="34" rx="1.5"/><rect x="331" y="40" width="3" height="34" rx="1.5"/><rect x="337" y="40" width="3" height="34" rx="1.5"/></g></g>
+  <path d="M14 138 L386 138 L374 178 L386 222 L14 222 L26 178 Z" fill="#06142e" stroke="#fff" stroke-width="5" stroke-linejoin="round"/>
+  <text x="200" y="182" text-anchor="middle" font-family="Anton, Impact, sans-serif" font-size="50" letter-spacing="2" fill="#CE1126" stroke="#fff" stroke-width="5" paint-order="stroke">DOMINICAN</text>
+  <text x="200" y="214" text-anchor="middle" font-family="Anton, Impact, sans-serif" font-size="32" letter-spacing="7" fill="#fff">BARBER SHOP</text>
+  <text x="200" y="128" text-anchor="middle" font-family="Yellowtail, 'Brush Script MT', cursive" font-size="78" fill="#fff" stroke="#0a3d9a" stroke-width="9" stroke-linejoin="round" paint-order="stroke" transform="rotate(-5 200 110)">Angel</text>
+</svg></div>
       <span class="eyebrow" data-i="ab2E">About us</span>
       <h2 data-i="ab2H">From the island to Cobb Parkway.</h2>
       <p class="lede" data-i="ab2P">In the Dominican Republic, the barbershop is where the neighborhood comes together — for the cut, the conversation, the bachata in the background and the dominoes after. Angel Dominican Barbershop brought that tradition to Kennesaw.</p>
@@ -629,7 +671,22 @@ footer a:hover{color:#fff}
 <footer><div class="wrap">
   <div class="fgrid">
     <div>
-      <div class="brand"><span class="logo-badge"><img src="media/logo.jpg" alt="Angel Dominican Barber Shop logo"></span><span class="brand-txt"><b>ANGEL DOMINICAN</b><small>Barbershop · Kennesaw</small></span></div>
+      <a href="#home" class="foot-logo" aria-label="Angel Dominican Barber Shop home"><svg class="logo-full" viewBox="0 0 400 330" role="img" aria-label="Angel Dominican Barber Shop">
+  <ellipse cx="200" cy="44" rx="56" ry="40" fill="url(#adbCap)" stroke="#fff" stroke-width="4"/>
+  <rect x="146" y="56" width="108" height="16" rx="5" fill="#fff"/>
+  <g clip-path="url(#adbPoleClip)"><g class="pole-spin-lg"><rect x="140" y="0" width="140" height="330" fill="url(#adbStripes)"/></g><rect x="160" y="70" width="80" height="176" fill="url(#adbShade)"/></g>
+  <rect x="146" y="244" width="108" height="16" rx="5" fill="#fff"/>
+  <ellipse cx="200" cy="282" rx="56" ry="34" fill="url(#adbCap)" stroke="#fff" stroke-width="4"/>
+  <g fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity=".9">
+    <circle cx="96" cy="262" r="11"/><circle cx="118" cy="282" r="11"/><path d="M104 254 L150 214 M110 274 L150 236"/>
+    <circle cx="304" cy="262" r="11"/><circle cx="282" cy="282" r="11"/><path d="M296 254 L250 214 M290 274 L250 236"/>
+  </g>
+  <g transform="rotate(-24 312 64)" fill="#fff"><rect x="280" y="24" width="64" height="16" rx="4"/><g><rect x="283" y="40" width="3" height="34" rx="1.5"/><rect x="289" y="40" width="3" height="34" rx="1.5"/><rect x="295" y="40" width="3" height="34" rx="1.5"/><rect x="301" y="40" width="3" height="34" rx="1.5"/><rect x="307" y="40" width="3" height="34" rx="1.5"/><rect x="313" y="40" width="3" height="34" rx="1.5"/><rect x="319" y="40" width="3" height="34" rx="1.5"/><rect x="325" y="40" width="3" height="34" rx="1.5"/><rect x="331" y="40" width="3" height="34" rx="1.5"/><rect x="337" y="40" width="3" height="34" rx="1.5"/></g></g>
+  <path d="M14 138 L386 138 L374 178 L386 222 L14 222 L26 178 Z" fill="#06142e" stroke="#fff" stroke-width="5" stroke-linejoin="round"/>
+  <text x="200" y="182" text-anchor="middle" font-family="Anton, Impact, sans-serif" font-size="50" letter-spacing="2" fill="#CE1126" stroke="#fff" stroke-width="5" paint-order="stroke">DOMINICAN</text>
+  <text x="200" y="214" text-anchor="middle" font-family="Anton, Impact, sans-serif" font-size="32" letter-spacing="7" fill="#fff">BARBER SHOP</text>
+  <text x="200" y="128" text-anchor="middle" font-family="Yellowtail, 'Brush Script MT', cursive" font-size="78" fill="#fff" stroke="#0a3d9a" stroke-width="9" stroke-linejoin="round" paint-order="stroke" transform="rotate(-5 200 110)">Angel</text>
+</svg></a>
       <p style="color:var(--muted);font-size:14px;margin-top:14px;max-width:300px" data-i="ftP">Dominican barbering on Cobb Parkway. Fades, beards, kids and family — since day one.</p>
       <div class="socials">
         <a href="https://www.instagram.com/angeldominicanbarbershop/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
